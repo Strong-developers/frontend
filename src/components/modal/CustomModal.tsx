@@ -7,7 +7,7 @@ interface ModalStyleType extends CommonComponentType {
   isModalOpen: boolean;
 }
 
-const CustomModal = ({ children, isModalOpen }: ModalStyleType) => {
+const CustomModal = ({ isModalOpen, children }: ModalStyleType) => {
   return (
     <CustomModalBackDrop isModalOpen={isModalOpen}>
       <CustomModalWrapper isModalOpen={isModalOpen}>
@@ -49,6 +49,7 @@ const CustomModalWrapper = styled.div`
   text-align: center;
   border-radius: 8px;
   transform: translate(-50%, -50%);
+  background-color: ${Theme.colors.white};
   ${isModalVisible};
 `;
 
