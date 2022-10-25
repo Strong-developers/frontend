@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 interface CustomModalType {
   isOpenModal: boolean;
@@ -9,13 +9,13 @@ interface CustomModalType {
 const useCustomModal = (): CustomModalType => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
-  const onClickOpenModalButtonEvent = () => {
+  const onClickOpenModalButtonEvent = useCallback(() => {
     setIsOpenModal(true);
-  };
+  }, [setIsOpenModal]);
 
-  const onClickCloseModalButtonEvent = () => {
+  const onClickCloseModalButtonEvent = useCallback(() => {
     setIsOpenModal(false);
-  };
+  }, [setIsOpenModal]);
 
   return {
     isOpenModal,
