@@ -1,11 +1,16 @@
 import { useState, useCallback } from "react";
 
-const useCustomModal = () => {
+type CustomModalReturnType = [
+  isModalOpen: boolean,
+  handleChangeModalState: () => void
+];
+
+const useCustomModal = (): CustomModalReturnType => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleChangeModalState = useCallback(() => {
     setIsModalOpen(!isModalOpen);
-  }, [setIsModalOpen]);
+  }, [isModalOpen, setIsModalOpen]);
 
   return [isModalOpen, handleChangeModalState];
 };
