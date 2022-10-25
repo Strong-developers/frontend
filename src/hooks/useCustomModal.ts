@@ -1,26 +1,24 @@
-import { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 
 interface CustomModalType {
-  isOpenModal: boolean;
-  onClickOpenModalButtonEvent: () => void;
-  onClickCloseModalButtonEvent: () => void;
+  handleModalOpenClick: () => void;
+  handleModalCloseClick: () => void;
 }
 
-const useCustomModal = (): CustomModalType => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
-  const onClickOpenModalButtonEvent = useCallback(() => {
+const useCustomModal = (
+  setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>
+): CustomModalType => {
+  const handleModalOpenClick = useCallback(() => {
     setIsOpenModal(true);
   }, [setIsOpenModal]);
 
-  const onClickCloseModalButtonEvent = useCallback(() => {
+  const handleModalCloseClick = useCallback(() => {
     setIsOpenModal(false);
   }, [setIsOpenModal]);
 
   return {
-    isOpenModal,
-    onClickOpenModalButtonEvent,
-    onClickCloseModalButtonEvent,
+    handleModalOpenClick,
+    handleModalCloseClick,
   };
 };
 
