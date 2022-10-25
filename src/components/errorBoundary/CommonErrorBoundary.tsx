@@ -1,12 +1,9 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import CustomErrorComponent from "./CustomErrorComponent";
+import { CommonComponentType } from "../../types/commonComponentType";
 
-interface CommonErrorBoundaryProps {
-  children: React.ReactNode;
-}
-
-const CommonErrorBoundary = ({ children }: CommonErrorBoundaryProps) => {
+const CommonErrorBoundary = ({ children }: CommonComponentType) => {
   return (
     <ErrorBoundary FallbackComponent={CustomErrorComponent}>
       {children}
