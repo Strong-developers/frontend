@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { UseFormRegister, FieldErrorsImpl } from "react-hook-form";
 import { AuthFormType } from "../../types/auth/authType";
 import CommonBaseInputContainer from "../hoc/CommonBaseInputContainer";
+import CommonBaseValidationTextContainer from "../hoc/CommonBaseValidationTextContainer";
 import { CommonInput, CommonButton } from "../../assets/styles/commonStyle";
 
 interface AuthLoginPropsType {
@@ -20,6 +21,11 @@ const AuthLogin = ({ register, errors }: AuthLoginPropsType) => {
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             type="text"
           />
+          {errors.email && (
+            <CommonBaseValidationTextContainer>
+              올바른 이메일을 입력해주세요.
+            </CommonBaseValidationTextContainer>
+          )}
         </CommonBaseInputContainer>
         <CommonBaseInputContainer>
           <AuthLoginLabel>비밀번호</AuthLoginLabel>
@@ -32,6 +38,11 @@ const AuthLogin = ({ register, errors }: AuthLoginPropsType) => {
             })}
             type="password"
           />
+          {errors.password && (
+            <CommonBaseValidationTextContainer>
+              8~15자의 영문 소문자, 숫자, 특수문자를 조합해주세요.
+            </CommonBaseValidationTextContainer>
+          )}
         </CommonBaseInputContainer>
         <AuthLoginButtonContainer>
           <AuthLoginButton type="submit">로그인</AuthLoginButton>
