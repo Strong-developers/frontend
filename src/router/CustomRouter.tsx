@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const MainComponentPage = React.lazy(() => import("../components/pages/Main"));
+const MainComponentPage = React.lazy(() => import("../pages/Main"));
 
 const CustomRouter = () => {
   return (
