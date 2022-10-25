@@ -1,5 +1,6 @@
 const Theme = {
   fontSize: {
+    smaller: "0.75rem",
     small: "0.875rem",
     default: "1rem",
     littleBig: "2rem",
