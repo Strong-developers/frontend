@@ -1,7 +1,8 @@
 import React from "react";
 import CustomRouter from "./router/CustomRouter";
-import GlobalStyle from "./styles/globalStyle";
+import GlobalStyle from "./assets/styles/globalStyle";
 import CommonErrorBoundary from "./components/errorBoundary/CommonErrorBoundary";
+
 function App() {
   return (
     <React.Fragment>
