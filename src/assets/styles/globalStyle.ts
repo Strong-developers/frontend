@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import NotoRegular from "./fonts/noto-sans-kr-regular.woff";
+import NotoRegular from "../fonts/noto-sans-kr-regular.woff";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
