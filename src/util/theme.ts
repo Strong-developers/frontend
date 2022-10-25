@@ -8,6 +8,7 @@ const Theme = {
   colors: {
     black: "#ffffff",
     white: "#000000",
+    littleGray: "rgb(0, 0, 0, 0.10)",
   },
 };
 
