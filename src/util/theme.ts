@@ -6,10 +6,15 @@ const Theme = {
     littleBig: "2rem",
     big: "2.5rem",
   },
+  fontWeight: {
+    little: 300,
+    bold: 700,
+  },
   colors: {
     white: "#ffffff",
     black: "#000000",
     littleGray: "rgb(0, 0, 0, 0.10)",
+    silverGray: "#949494",
   },
 };
 
