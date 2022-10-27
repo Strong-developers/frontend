@@ -5,7 +5,11 @@ import AuthMemberSelector from "./AuthMemberSelector";
 import { AuthFormType } from "../../types/auth/authType";
 import CommonBaseInputContainer from "../hoc/CommonBaseInputContainer";
 import CommonBaseValidationTextContainer from "../hoc/CommonBaseValidationTextContainer";
-import { CommonInput, CommonButton } from "../../assets/styles/commonStyle";
+import {
+  CommonInput,
+  CommonButton,
+  CommonLabel,
+} from "../../assets/styles/commonStyle";
 
 interface AuthRegisterPropsType {
   register: UseFormRegister<AuthFormType>;
@@ -18,14 +22,16 @@ const AuthRegister = ({ register, errors }: AuthRegisterPropsType) => {
       <AuthMemberSelector />
       <AuthRegisterForm>
         <CommonBaseInputContainer>
-          <AuthRegisterLabel>이메일</AuthRegisterLabel>
-          <AuthRegisterInput
-            {...register("email", {
-              required: true,
-              pattern: /^\S+@\S+$/i,
-            })}
-            type="text"
-          />
+          <AuthRegisterLabel>
+            이메일
+            <AuthRegisterInput
+              {...register("email", {
+                required: true,
+                pattern: /^\S+@\S+$/i,
+              })}
+              type="text"
+            />
+          </AuthRegisterLabel>
           {errors.email && (
             <CommonBaseValidationTextContainer>
               올바른 이메일을 입력해주세요.
@@ -33,14 +39,16 @@ const AuthRegister = ({ register, errors }: AuthRegisterPropsType) => {
           )}
         </CommonBaseInputContainer>
         <CommonBaseInputContainer>
-          <AuthRegisterLabel>닉네임</AuthRegisterLabel>
-          <AuthRegisterInput
-            {...register("nickname", {
-              required: true,
-              minLength: 4,
-            })}
-            type="text"
-          />
+          <AuthRegisterLabel>
+            닉네임
+            <AuthRegisterInput
+              {...register("nickname", {
+                required: true,
+                minLength: 4,
+              })}
+              type="text"
+            />
+          </AuthRegisterLabel>
           {errors.nickname && (
             <CommonBaseValidationTextContainer>
               닉네임을 4글자 이상 사용해주세요.
@@ -48,16 +56,18 @@ const AuthRegister = ({ register, errors }: AuthRegisterPropsType) => {
           )}
         </CommonBaseInputContainer>
         <CommonBaseInputContainer>
-          <AuthRegisterLabel>비밀번호</AuthRegisterLabel>
-          <AuthRegisterInput
-            {...register("password", {
-              required: true,
-              minLength: 8,
-              maxLength: 15,
-              pattern: /^.(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/,
-            })}
-            type="password"
-          />
+          <AuthRegisterLabel>
+            비밀번호
+            <AuthRegisterInput
+              {...register("password", {
+                required: true,
+                minLength: 8,
+                maxLength: 15,
+                pattern: /^.(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/,
+              })}
+              type="password"
+            />
+          </AuthRegisterLabel>
           {errors.password && (
             <CommonBaseValidationTextContainer>
               8~15자의 영문 소문자, 숫자, 특수문자를 조합해주세요.
@@ -65,13 +75,15 @@ const AuthRegister = ({ register, errors }: AuthRegisterPropsType) => {
           )}
         </CommonBaseInputContainer>
         <CommonBaseInputContainer>
-          <AuthRegisterLabel>비밀번호확인</AuthRegisterLabel>
-          <AuthRegisterInput
-            {...register("confirmPassword", {
-              required: true,
-            })}
-            type="password"
-          />
+          <AuthRegisterLabel>
+            비밀번호확인
+            <AuthRegisterInput
+              {...register("confirmPassword", {
+                required: true,
+              })}
+              type="password"
+            />
+          </AuthRegisterLabel>
           <CommonBaseValidationTextContainer>
             비밀번호가 일치하지 않습니다.
           </CommonBaseValidationTextContainer>
@@ -97,9 +109,9 @@ const AuthRegisterFormContainer = styled.div`
   margin-top: 150px;
 `;
 const AuthRegisterForm = styled.form``;
-const AuthRegisterLabel = styled.label`
-  font-size: 15px;
-`;
+
+const AuthRegisterLabel = styled(CommonLabel)``;
+
 const AuthRegisterInput = styled(CommonInput)`
   margin-top: 5px;
   height: 40px;
