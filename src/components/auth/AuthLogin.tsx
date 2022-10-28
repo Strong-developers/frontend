@@ -4,7 +4,7 @@ import { UseFormRegister, FieldErrorsImpl } from "react-hook-form";
 import { AuthFormType } from "../../types/auth/authType";
 import CommonBaseInputContainer from "../hoc/CommonBaseInputContainer";
 import CommonBaseValidationTextContainer from "../hoc/CommonBaseValidationTextContainer";
-import { CommonInput, CommonButton } from "../../assets/styles/commonStyle";
+import { CommonInput, ThemeButton } from "../../assets/styles/commonStyle";
 
 interface AuthLoginPropsType {
   register: UseFormRegister<AuthFormType>;
@@ -45,7 +45,7 @@ const AuthLogin = ({ register, errors }: AuthLoginPropsType) => {
           )}
         </CommonBaseInputContainer>
         <AuthLoginButtonContainer>
-          <AuthLoginButton type="submit">로그인</AuthLoginButton>
+          <ThemeButton type="submit">로그인</ThemeButton>
           <span>
             아직 회원이 아니신가요?<a href="/register">회원가입</a>
           </span>
@@ -64,8 +64,15 @@ const AuthLoginFormContainer = styled.div`
   align-items: center;
   margin-top: 150px;
 `;
-const AuthLoginForm = styled.form``;
-const AuthLoginLabel = styled.label``;
+
+const AuthLoginForm = styled.form`
+  width: auto;
+`;
+
+const AuthLoginLabel = styled.label`
+  font-size: 15px;
+`;
+
 const AuthLoginInput = styled(CommonInput)`
   margin-top: 5px;
   height: 40px;
@@ -74,12 +81,4 @@ const AuthLoginInput = styled(CommonInput)`
 
 const AuthLoginButtonContainer = styled.div`
   margin-top: 30px;
-`;
-
-const AuthLoginButton = styled(CommonButton)`
-  width: 100%;
-  height: 40px;
-  margin-bottom: 15px;
-  background-color: #0a81ed;
-  color: white;
 `;
