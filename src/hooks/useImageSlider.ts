@@ -1,12 +1,12 @@
 import { useState, useCallback } from "react";
 
-interface useImageSliderReturnType {
+interface UseImageSliderReturnType {
   curIndex: number;
   handleNextButtonClick: () => void;
   handlePrevButtonClick: () => void;
 }
 
-const useImageSlider = (totalIamgeLength: number): useImageSliderReturnType => {
+const useImageSlider = (totalIamgeLength: number): UseImageSliderReturnType => {
   const [curIndex, setCurIndex] = useState<number>(0);
 
   const handleNextButtonClick = useCallback(() => {
