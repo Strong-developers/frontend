@@ -6,10 +6,14 @@ import {
   CalendarGridCell,
 } from "../../assets/styles/commonStyle";
 
-const CalendarDayNumber = () => {
+interface CalendarDayNumberProps {
+  days: Array<number>;
+}
+
+const CalendarDayNumber = ({ days }: CalendarDayNumberProps) => {
   return (
     <GridContainer>
-      <CalendarGridNumberCell>1</CalendarGridNumberCell>
+      {days.map((day) => <CalendarGridNumberCell key={day}>{day}</CalendarGridNumberCell>)}
     </GridContainer>
   );
 };

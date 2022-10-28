@@ -4,12 +4,14 @@ import Theme from "../../util/theme";
 import { createMonthName } from "../../util/dateUtil";
 
 interface CalendarHeaderProps {
+  year: number;
   month: number;
   onPrevMonthButtonClickEvent: () => void;
   onNextMonthButtonClickEvent: () => void;
 }
 
 const CalendarHeader = ({
+  year,
   month,
   onPrevMonthButtonClickEvent,
   onNextMonthButtonClickEvent,
@@ -20,7 +22,7 @@ const CalendarHeader = ({
         Left
       </CalendarHeaderColStart>
       <CalendarHeaderColCenter>
-        {createMonthName(month)}
+        {year} {createMonthName(month)}
       </CalendarHeaderColCenter>
       <CalendarHeaderColEnd onClick={onNextMonthButtonClickEvent}>
         Right
