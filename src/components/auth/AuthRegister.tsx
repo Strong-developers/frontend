@@ -5,7 +5,7 @@ import AuthMemberSelector from "./AuthMemberSelector";
 import { AuthFormType } from "../../types/auth/authType";
 import CommonBaseInputContainer from "../hoc/CommonBaseInputContainer";
 import CommonBaseValidationTextContainer from "../hoc/CommonBaseValidationTextContainer";
-import { CommonInput, CommonButton } from "../../assets/styles/commonStyle";
+import { CommonInput, ThemeButton } from "../../assets/styles/commonStyle";
 
 interface AuthRegisterPropsType {
   register: UseFormRegister<AuthFormType>;
@@ -77,7 +77,7 @@ const AuthRegister = ({ register, errors }: AuthRegisterPropsType) => {
           </CommonBaseValidationTextContainer>
         </CommonBaseInputContainer>
         <AuthRegisterButtonContainer>
-          <AuthRegisterButton>회원가입</AuthRegisterButton>
+          <ThemeButton>회원가입</ThemeButton>
           <span>
             이미 회원이신가요?<a href="/login">로그인</a>
           </span>
@@ -96,10 +96,15 @@ const AuthRegisterFormContainer = styled.div`
   align-items: center;
   margin-top: 150px;
 `;
-const AuthRegisterForm = styled.form``;
+
+const AuthRegisterForm = styled.form`
+  width: auto;
+`;
+
 const AuthRegisterLabel = styled.label`
   font-size: 15px;
 `;
+
 const AuthRegisterInput = styled(CommonInput)`
   margin-top: 5px;
   height: 40px;
@@ -108,12 +113,4 @@ const AuthRegisterInput = styled(CommonInput)`
 
 const AuthRegisterButtonContainer = styled.div`
   margin-top: 30px;
-`;
-
-const AuthRegisterButton = styled(CommonButton)`
-  width: 100%;
-  height: 40px;
-  margin-bottom: 15px;
-  background-color: #0a81ed;
-  color: white;
 `;
