@@ -39,7 +39,6 @@ const CalendarHeaderContainer = styled.div`
   justify-content: space-between;
   font-size: ${Theme.fontSize.default};
   font-weight: ${Theme.fontWeight.bold};
-  border-bottom: 1px solid ${Theme.colors.black};
 `;
 
 const CalendarColumn = styled.div`
