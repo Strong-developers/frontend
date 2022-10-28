@@ -16,7 +16,7 @@ const CustomRouter = () => {
         <Route path="/" element={<MainComponentPage />} />
         <Route path="/login" element={<LoginComponentPage />} />
         <Route path="/register" element={<RegisterComponentPage />} />
-        <Route path="/calendar" element={<CalendarComponentPage />} />
+        <Route path="/reserve" element={<CalendarComponentPage />} />
       </Routes>
     </React.Fragment>
   );
