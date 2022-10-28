@@ -1,11 +1,29 @@
-import { format, getMonth, startOfWeek } from "date-fns";
+import {
+  format,
+  getMonth,
+  getYear,
+  startOfWeek,
+  getDaysInMonth,
+} from "date-fns";
 
 export function startMonth(): number {
   return getMonth(new Date()) + 1;
 }
 
+export function startYear(): number {
+  return getYear(new Date());
+}
+
 export function startDate(month: number): string {
   return format(startOfWeek(month), "d");
+}
+
+export function daysInMonth(curYear: number, curMonth: number) {
+  const days = getDaysInMonth(new Date(curYear, curMonth - 1));
+  return (() =>
+    Array.from({ length: days })
+      .fill(0)
+      .map((_, index) => index + 1))();
 }
 
 export function createMonthName(month: number) {
