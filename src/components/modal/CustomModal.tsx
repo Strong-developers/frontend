@@ -15,7 +15,7 @@ const CustomModal = ({
 }: ModalStyleType) => {
   return (
     <CustomModalBackDrop isModalOpen={isModalOpen}>
-      <CustomModalWrapper isModalOpen={isModalOpen}>
+      <CustomModalWrapper>
         <img src="../../src/assets/images/modal-cancel.png" />
         {children}
       </CustomModalWrapper>
@@ -23,18 +23,8 @@ const CustomModal = ({
   );
 };
 
-const isModalVisible = css<ModalStyleType>`
-  ${(props) =>
-    props.isModalOpen
-      ? css`
-          display: block;
-        `
-      : css`
-          display: none;
-        `}
-`;
-
-const CustomModalBackDrop = styled.div`
+const CustomModalBackDrop = styled.div<{ isModalOpen: boolean }>`
+  ${(props) => (props.isModalOpen ? "display: block" : "display: none")};
   position: fixed;
   background-color: ${Theme.colors.littleGray};
   top: 0;
@@ -42,7 +32,6 @@ const CustomModalBackDrop = styled.div`
   left: 0;
   right: 0;
   z-index: 0;
-  ${isModalVisible};
 `;
 
 const CustomModalWrapper = styled.div`
@@ -56,7 +45,6 @@ const CustomModalWrapper = styled.div`
   border-radius: 8px;
   transform: translate(-50%, -50%);
   background-color: ${Theme.colors.white};
-  ${isModalVisible};
 `;
 
 export default CustomModal;
