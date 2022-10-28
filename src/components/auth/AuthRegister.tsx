@@ -95,6 +95,7 @@ const AuthRegisterFormContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 150px;
+  font-weight: bold;
 `;
 
 const AuthRegisterForm = styled.form`
