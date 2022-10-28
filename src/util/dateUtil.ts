@@ -3,6 +3,7 @@ import {
   getMonth,
   getYear,
   startOfWeek,
+  getDay,
   getDaysInMonth,
 } from "date-fns";
 
@@ -14,16 +15,23 @@ export function startYear(): number {
   return getYear(new Date());
 }
 
+export function getWeekDay(curYear: number, curMonth: number, curDay: number) {
+  return getDay(new Date(curYear, curMonth, curDay));
+}
+
 export function startDate(month: number): string {
   return format(startOfWeek(month), "d");
 }
 
 export function daysInMonth(curYear: number, curMonth: number) {
   const days = getDaysInMonth(new Date(curYear, curMonth - 1));
-  return (() =>
+  const day = getWeekDay(curYear, curMonth, 1);
+  const daysArr = new Array(day).fill(0);
+  const daysTempArr = (() =>
     Array.from({ length: days })
       .fill(0)
       .map((_, index) => index + 1))();
+  return [...daysArr, ...daysTempArr];
 }
 
 export function createMonthName(month: number) {

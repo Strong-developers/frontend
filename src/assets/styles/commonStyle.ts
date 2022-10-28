@@ -13,10 +13,56 @@ export const CommonInput = styled.input`
   }
 `;
 
-export const CommonButton = styled.button`
-  border: none;
+export const CommonButtonStyle = styled.button`
+  width: 100%;
+  height: 40px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: ${Theme.fontWeight.bold};
+`;
+
+export const DarkBlackButton = styled(CommonButtonStyle)`
+  border: 1px solid ${Theme.colors.darkBlack};
+  color: ${Theme.colors.white};
+  background-color: ${Theme.colors.darkBlack};
+  transition: 0.5s;
+  &:hover {
+    background-color: ${Theme.colors.white};
+    color: ${Theme.colors.darkBlack};
+  }
+`;
+
+export const BorderDarkBlackButton = styled(CommonButtonStyle)`
+  border: 1px solid ${Theme.colors.darkBlack};
+  color: ${Theme.colors.darkBlack};
+  background-color: ${Theme.colors.white};
+  transition: 0.5s;
+  &:hover {
+    background-color: ${Theme.colors.darkBlack};
+    color: ${Theme.colors.white};
+  }
+`;
+
+export const ThemeBorderButton = styled(CommonButtonStyle)`
+  border: 1px solid ${Theme.colors.theme};
+  color: ${Theme.colors.theme};
+  background-color: ${Theme.colors.white};
+  transition: 0.5s;
+  &:hover {
+    background-color: ${Theme.colors.theme};
+    color: ${Theme.colors.white};
+  }
+`;
+
+export const ThemeButton = styled(CommonButtonStyle)`
+  border: 1px solid ${Theme.colors.theme};
+  color: ${Theme.colors.white};
+  background-color: ${Theme.colors.theme};
+  transition: 0.5s;
+  &:hover {
+    background-color: ${Theme.colors.white};
+    color: ${Theme.colors.theme};
+  }
 `;
 
 export const CommonLabel = styled.label`
