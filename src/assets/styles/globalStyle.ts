@@ -1,16 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import NotoRegular from "../fonts/noto-sans-kr-regular.woff";
+import MaruBuriRegular from "../fonts/MaruBuri-Regular.otf";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   @font-face {
-    font-family: "noto";
-    src: local("NotoSansKrRegular"), url(${NotoRegular}) format('woff');
+    font-family: "maru";
+    src: local("MaruBuri-Regular"), url(${MaruBuriRegular});
   }
   html,
   body {
-    font-family: "noto";
+    font-family: "maru";
     height: 100%;
     width: 100%;
     font-size: 100%;
