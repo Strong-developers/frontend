@@ -17,7 +17,7 @@ const Theme = {
     silverGray: "#949494",
     theme: "#00ccff",
     tp: "transparent",
-    moreTp: "rgba(0, 0, 0, 0.1)",
+    moreTp: "rgba(0, 0, 0, 0.12)",
   },
 };
 
