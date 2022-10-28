@@ -4,7 +4,11 @@ import { UseFormRegister, FieldErrorsImpl } from "react-hook-form";
 import { AuthFormType } from "../../types/auth/authType";
 import CommonBaseInputContainer from "../hoc/CommonBaseInputContainer";
 import CommonBaseValidationTextContainer from "../hoc/CommonBaseValidationTextContainer";
-import { CommonInput, ThemeButton } from "../../assets/styles/commonStyle";
+import {
+  CommonInput,
+  ThemeButton,
+  CommonLabel,
+} from "../../assets/styles/commonStyle";
 
 interface AuthLoginPropsType {
   register: UseFormRegister<AuthFormType>;
@@ -69,7 +73,7 @@ const AuthLoginForm = styled.form`
   width: auto;
 `;
 
-const AuthLoginLabel = styled.label`
+const AuthLoginLabel = styled(CommonLabel)`
   font-size: 15px;
 `;
 
