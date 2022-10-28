@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import CommonBaseInputContainer from "../hoc/CommonBaseInputContainer";
+import CommonBaseReservationWrapper from "../hoc/CommonBaseReservationWrapper";
 import { CommonInput, CommonLabel } from "../../assets/styles/commonStyle";
 
 const ReservationForm = () => {
   return (
-    <ReservationFormWrapper>
+    <CommonBaseReservationWrapper>
       <ReservationFormContainer>
         <CommonBaseInputContainer>
           <ReservationFormLabel>
@@ -39,18 +40,15 @@ const ReservationForm = () => {
         </CommonBaseInputContainer>
         <button>예약하기</button>
       </ReservationFormContainer>
-    </ReservationFormWrapper>
+    </CommonBaseReservationWrapper>
   );
 };
 
 export default ReservationForm;
 
-const ReservationFormWrapper = styled.div`
-  width: 600px;
-`;
-
 const ReservationFormContainer = styled.div`
-  width: 100%;
+  width: 500px;
+  margin: 0 auto;
 `;
 
 const ReservationFormInput = styled(CommonInput)`

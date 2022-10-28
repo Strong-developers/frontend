@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import CommonBaseReservationWrapper from "../hoc/CommonBaseReservationWrapper";
 
 const ReservationCalendar = () => {
   return (
-    <ReservationCalendarWrapper>
+    <CommonBaseReservationWrapper>
       <ReservationCalendarContainer>
         <CalendarContainer>
           <span>날짜를 선택해주세요.</span>
@@ -12,17 +13,12 @@ const ReservationCalendar = () => {
         <div>오전</div>
         <div>오후</div>
       </ReservationCalendarContainer>
-    </ReservationCalendarWrapper>
+    </CommonBaseReservationWrapper>
   );
 };
 
 export default ReservationCalendar;
 
-const ReservationCalendarWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-`;
 const ReservationCalendarContainer = styled.div`
   width: 600px;
   margin: auto;
