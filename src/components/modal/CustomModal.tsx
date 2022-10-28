@@ -5,12 +5,18 @@ import Theme from "../../util/theme";
 
 interface ModalStyleType extends CommonComponentType {
   isModalOpen: boolean;
+  handleChangeModalState: () => void;
 }
 
-const CustomModal = ({ isModalOpen, children }: ModalStyleType) => {
+const CustomModal = ({
+  isModalOpen,
+  handleChangeModalState,
+  children,
+}: ModalStyleType) => {
   return (
     <CustomModalBackDrop isModalOpen={isModalOpen}>
       <CustomModalWrapper isModalOpen={isModalOpen}>
+        <img src="../../src/assets/images/modal-cancel.png" />
         {children}
       </CustomModalWrapper>
     </CustomModalBackDrop>
