@@ -5,6 +5,7 @@ import HeaderLayout from "../components/common/headerLayout";
 const MainComponentPage = React.lazy(() => import("../pages/Main"));
 const LoginComponentPage = React.lazy(() => import("../pages/Login"));
 const RegisterComponentPage = React.lazy(() => import("../pages/Register"));
+const CalendarComponentPage = React.lazy(() => import("../pages/Calendar"));
 
 const CustomRouter = () => {
   return (
@@ -15,6 +16,7 @@ const CustomRouter = () => {
         <Route path="/" element={<MainComponentPage />} />
         <Route path="/login" element={<LoginComponentPage />} />
         <Route path="/register" element={<RegisterComponentPage />} />
+        <Route path="/reserve" element={<CalendarComponentPage />} />
       </Routes>
     </React.Fragment>
   );
