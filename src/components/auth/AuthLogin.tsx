@@ -63,6 +63,7 @@ const AuthLoginFormContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 150px;
+  font-weight: bold;
 `;
 
 const AuthLoginForm = styled.form`
