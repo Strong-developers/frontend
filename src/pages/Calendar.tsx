@@ -1,29 +1,46 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import CalendarHeader from "../components/calendar/CalendarHeader";
 import CalendarDay from "../components/calendar/CalendarDay";
 import CalendarDayNumber from "../components/calendar/CalendarDayNumber";
-import { startMonth } from "../util/dateUtil";
+import { startYear, startMonth, daysInMonth } from "../util/dateUtil";
 
 const Calendar = () => {
-  const curMonth = startMonth();
+  const [curYear, setCurYear] = useState<number>(startYear());
+  const [curMonth, setCurMonth] = useState<number>(startMonth());
+
+  const curDays = useMemo(
+    () => daysInMonth(curYear, curMonth),
+    [curYear, curMonth]
+  );
 
   const handlePrevMonthButtonClick = () => {
-    console.log("Prev");
+    if (curMonth - 1 < 1) {
+      setCurYear((prev) => prev - 1);
+      setCurMonth(12);
+    } else {
+      setCurMonth((prev) => prev - 1);
+    }
   };
 
   const handleNextMonthButtonClick = () => {
-    console.log("Next");
+    if (curMonth + 1 > 12) {
+      setCurYear((prev) => prev + 1);
+      setCurMonth(1);
+    } else {
+      setCurMonth((prev) => prev + 1);
+    }
   };
 
   return (
     <React.Fragment>
       <CalendarHeader
+        year={curYear}
         month={curMonth}
         onPrevMonthButtonClickEvent={handlePrevMonthButtonClick}
         onNextMonthButtonClickEvent={handleNextMonthButtonClick}
       />
       <CalendarDay />
-      <CalendarDayNumber />
+      <CalendarDayNumber days={curDays} />
     </React.Fragment>
   );
 };
