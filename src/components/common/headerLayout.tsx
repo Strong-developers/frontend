@@ -1,40 +1,55 @@
-import React from "react";
 import styled from "styled-components";
 import Theme from "../../util/theme";
 
 const HeaderLayout = () => {
-  const menuItems = ["A", "B", "VOLUNTEERS", "C", "D"];
-
   return (
-    <React.Fragment>
-      <HeaderContainer>
-        <HeaderItemSection>
-          {menuItems.map((m) => (
-            <HeaderItemMenu key={m}>{m}</HeaderItemMenu>
-          ))}
-        </HeaderItemSection>
-      </HeaderContainer>
-    </React.Fragment>
+    <HeaderContainer>
+      <HeaderLeftWrapper>Logo</HeaderLeftWrapper>
+      <HeaderRightWrapper>
+        <HeaderRightMenuSection>
+          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
+          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
+          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
+          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
+          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
+        </HeaderRightMenuSection>
+      </HeaderRightWrapper>
+    </HeaderContainer>
   );
 };
 
 const HeaderContainer = styled.div`
   width: 100%;
-  height: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: transparent;
+  height: 80px;
+  line-height: 80px;
+  color: ${Theme.colors.white};
+  font-size: ${Theme.fontSize.default};
+  font-weigh: ${Theme.fontWeight.bold};
+  background-color: ${Theme.colors.moreTp};
 `;
 
-const HeaderItemSection = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const HeaderLeftWrapper = styled.div`
+  width: 20%;
+  float: left;
 `;
 
-const HeaderItemMenu = styled.li`
+const HeaderRightWrapper = styled.div`
+  width: 60%;
+  float: right;
+`;
+
+const HeaderRightMenuSection = styled.ul`
+  margin-left: 200px;
+`;
+
+const HeaderRightMenuItem = styled.li`
+  display: inline-block;
   cursor: pointer;
-  font-size: ${Theme.fontSize.big};
+  margin-left: 40px;
+  transition: 0.5s;
+  &:hover {
+    color: ${Theme.colors.theme};
+  }
 `;
 
 export default HeaderLayout;
