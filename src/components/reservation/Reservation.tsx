@@ -32,7 +32,10 @@ const Reservation = ({
   };
 
   return (
-    <CustomModal isModalOpen={isModalOpen}>
+    <CustomModal
+      isModalOpen={isModalOpen}
+      handleChangeModalState={onCloseButtonClickEvent}
+    >
       <CloseButton
         onClick={() => {
           setCurrentPosition(1);
