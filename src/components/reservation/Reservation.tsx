@@ -26,8 +26,8 @@ const Reservation = ({
     handlePrevButtonClick,
   } = useChangePosition(3);
   const components: ComponentsType = {
-    1: <ReservationCalendar />,
-    2: <ReservationNotice />,
+    1: <ReservationNotice />,
+    2: <ReservationCalendar />,
     3: <ReservationForm />,
   };
 
