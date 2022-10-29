@@ -11,7 +11,7 @@ const Main = () => {
       <CustomSlider imageArray={imageArray} />
       <MainLogoText>VOLUNTEERS</MainLogoText>
       <MainTextOne>SHELTER FOR ABANDONED DOG</MainTextOne>
-      <MainTextTwo>CREATIVE & EXPRERIENCED</MainTextTwo>
+      <MainTextTwo>CREATIVE & EXPRERIENCE</MainTextTwo>
       <MainTextThree>
         WE ARE THE ONE OF THE WORLD'S TOP CREATIVE DESIGN AGENCIES
       </MainTextThree>
