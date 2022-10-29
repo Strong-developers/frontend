@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Theme from "../../util/theme";
 import { createMonthName } from "../../util/dateUtil";
+import { createBackButton, createForwardButton } from "../icons/IconCreator";
 
 interface CalendarHeaderProps {
   year: number;
@@ -19,13 +20,13 @@ const CalendarHeader = ({
   return (
     <CalendarHeaderContainer>
       <CalendarHeaderColStart onClick={onPrevMonthButtonClickEvent}>
-        Left
+        {createBackButton(20)}
       </CalendarHeaderColStart>
       <CalendarHeaderColCenter>
         {year} {createMonthName(month)}
       </CalendarHeaderColCenter>
       <CalendarHeaderColEnd onClick={onNextMonthButtonClickEvent}>
-        Right
+        {createForwardButton(20)}
       </CalendarHeaderColEnd>
     </CalendarHeaderContainer>
   );
@@ -39,6 +40,7 @@ const CalendarHeaderContainer = styled.div`
   justify-content: space-between;
   font-size: ${Theme.fontSize.default};
   font-weight: ${Theme.fontWeight.bold};
+  user-select: none;
 `;
 
 const CalendarColumn = styled.div`
