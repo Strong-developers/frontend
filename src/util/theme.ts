@@ -6,6 +6,7 @@ const Theme = {
     littleMoreBig: "1.25rem",
     littleBig: "2rem",
     big: "2.5rem",
+    moreBig: "3.45rem",
   },
   fontWeight: {
     little: 300,
