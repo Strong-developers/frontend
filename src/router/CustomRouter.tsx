@@ -8,6 +8,9 @@ const RegisterComponentPage = React.lazy(() => import("../pages/Register"));
 const CalendarComponentPage = React.lazy(
   () => import("../components/calendar/Calendar")
 );
+const ReservationComponentPage = React.lazy(
+  () => import("../pages/Reservation")
+);
 
 const CustomRouter = () => {
   return (
@@ -19,6 +22,7 @@ const CustomRouter = () => {
           <Route path="/login" element={<LoginComponentPage />} />
           <Route path="/register" element={<RegisterComponentPage />} />
           <Route path="/reserve" element={<CalendarComponentPage />} />
+          <Route path="/shelters" element={<ReservationComponentPage />} />
         </Routes>
       </Suspense>
     </React.Fragment>
