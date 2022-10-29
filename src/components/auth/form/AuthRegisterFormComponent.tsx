@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   CommonLabel,
@@ -70,7 +71,7 @@ const AuthRegisterFormComponent = ({ register, errors }: AuthFormPropsType) => {
       </CommonBaseInputContainer>
       <CommonBaseInputContainer>
         <AuthRegisterLabel>
-          비밀번호확인
+          비밀번호 확인
           <AuthRegisterInput
             {...register("confirmPassword", {
               required: true,
@@ -86,7 +87,7 @@ const AuthRegisterFormComponent = ({ register, errors }: AuthFormPropsType) => {
       <ThemeButton>회원가입</ThemeButton>
       <AuthRegisterButtonContainer>
         <AuthRegisterText>이미 회원이신가요?</AuthRegisterText>
-        <AuthRegisterLink href="/login">로그인</AuthRegisterLink>
+        <AuthRegisterLink to="/login">로그인</AuthRegisterLink>
       </AuthRegisterButtonContainer>
     </AuthRegisterForm>
   );
@@ -102,7 +103,7 @@ const AuthRegisterLabel = styled(CommonLabel)`
 
 const AuthRegisterInput = styled(CommonInput)`
   width: 100%;
-  margin-top: 5px;
+  margin-top: 0.5rem;
   height: 2.5rem;
 `;
 
@@ -118,7 +119,7 @@ const AuthRegisterText = styled.span`
   display: block;
 `;
 
-const AuthRegisterLink = styled.a`
+const AuthRegisterLink = styled(Link)`
   display: block;
   color: ${Theme.colors.black};
   text-decoration: none;

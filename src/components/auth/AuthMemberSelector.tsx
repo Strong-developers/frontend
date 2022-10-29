@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Theme from "../../util/theme";
 
 const AuthMemberSelector = () => {
-  const memberSelection = ["Volunteer", "Shelter"];
+  const memberSelection = ["일반 사용자", "보호소 관계자"];
 
   return (
     <AuthMemberSelectorContainer>
