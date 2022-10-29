@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   CommonInput,
@@ -49,7 +50,7 @@ const AuthLoginFormComponent = ({ register, errors }: AuthFormPropsType) => {
           <AuthPasswordForgotText>
             아직 회원이 아니신가요?
           </AuthPasswordForgotText>
-          <AuthPasswordForgotLink href="/register">
+          <AuthPasswordForgotLink to="/register">
             회원가입
           </AuthPasswordForgotLink>
         </AuthPasswordContainer>
@@ -67,7 +68,7 @@ const AuthLoginLabel = styled(CommonLabel)`
 `;
 
 const AuthLoginInput = styled(CommonInput)`
-  margin-top: 5px;
+  margin-top: 0.5rem;
   height: 2.5rem;
   width: 100%;
 `;
@@ -88,7 +89,7 @@ const AuthPasswordForgotText = styled.span`
   display: block;
 `;
 
-const AuthPasswordForgotLink = styled.a`
+const AuthPasswordForgotLink = styled(Link)`
   display: block;
   color: ${Theme.colors.black};
   text-decoration: none;
