@@ -1,16 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import MaruBuriRegular from "../fonts/MaruBuri-Regular.otf";
+import Sebang from "../fonts/SEBANG-Gothic-OTF.otf";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   @font-face {
-    font-family: "maru";
-    src: local("MaruBuri-Regular"), url(${MaruBuriRegular});
+    font-family: "sebang";
+    src: local("Sebang"), url(${Sebang});
   }
   html,
   body {
-    font-family: "maru";
+    font-family: "sebang";
     height: 100%;
     width: 100%;
     font-size: 100%;
