@@ -7,7 +7,6 @@ export const CommonInput = styled.input`
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 16px;
-
   &:focus {
     outline: 1px solid black;
   }

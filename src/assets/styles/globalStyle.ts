@@ -1,16 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import NotoRegular from "../fonts/noto-sans-kr-regular.woff";
+import Sebang from "../fonts/SEBANG-Gothic-OTF.otf";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   @font-face {
-    font-family: "noto";
-    src: local("NotoSansKrRegular"), url(${NotoRegular}) format('woff');
+    font-family: "sebang";
+    src: local("Sebang"), url(${Sebang});
   }
   html,
   body {
-    font-family: "noto";
+    font-family: "sebang";
     height: 100%;
     width: 100%;
     font-size: 100%;

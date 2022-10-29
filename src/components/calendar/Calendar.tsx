@@ -1,8 +1,8 @@
 import React from "react";
-import useCalendar from "../hooks/useCalendar";
-import CalendarHeader from "../components/calendar/CalendarHeader";
-import CalendarDay from "../components/calendar/CalendarDay";
-import CalendarDayNumber from "../components/calendar/CalendarDayNumber";
+import useCalendar from "../../hooks/useCalendar";
+import CalendarHeader from "./CalendarHeader";
+import CalendarDay from "./CalendarDay";
+import CalendarDayNumber from "./CalendarDayNumber";
 
 const Calendar = () => {
   const {
