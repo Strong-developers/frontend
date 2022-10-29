@@ -9,7 +9,7 @@ const HeaderLayout = () => {
     <HeaderContainer>
       <HeaderLeftWrapper>
         <HeaderLogo
-          src="../../src/assets/images/logo2.png"
+          src="../../src/assets/images/logo-none-bg.png"
           onClick={() => navigate("/")}
         />
       </HeaderLeftWrapper>
@@ -54,7 +54,7 @@ const HeaderRightMenuItem = styled.li`
   display: inline-block;
   cursor: pointer;
   margin-left: 40px;
-  transition: 0.1s;
+  transition: 0.4s;
   &:hover {
     color: ${Theme.colors.theme};
   }
