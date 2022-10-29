@@ -32,7 +32,7 @@ const HeaderContainer = styled.div`
   width: 100%;
   height: 80px;
   line-height: 80px;
-  color: ${Theme.colors.white};
+  color: ${Theme.colors.black};
   font-size: ${Theme.fontSize.default};
   font-weigh: ${Theme.fontWeight.bold};
   background-color: ${Theme.colors.moreTp};
