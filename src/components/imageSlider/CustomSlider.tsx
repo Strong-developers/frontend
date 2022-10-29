@@ -33,6 +33,7 @@ const SliderContainer = styled.div`
 
 const SliderImageWrapper = styled.div`
   width: 100%;
+  height: 100vh;
   margin: 0 auto;
   object-fit: cover;
   overflow: hidden;
@@ -40,7 +41,7 @@ const SliderImageWrapper = styled.div`
 
 const SliderImage = styled.img`
   width: auto;
-  opacity: 0.92;
+  opacity: 0.97;
 `;
 
 const SliderButton = styled.button`
@@ -52,12 +53,12 @@ const SliderButton = styled.button`
 `;
 
 const SliderPrevButton = styled(SliderButton)`
-  top: 70%;
+  top: 60%;
   left: 0;
 `;
 
 const SliderNextButton = styled(SliderButton)`
-  top: 70%;
+  top: 60%;
   right: 0;
 `;
 
