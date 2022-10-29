@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Theme from "../../util/theme";
 
 const HeaderLayout = () => {
+  const navigate = useNavigate();
+
   return (
     <HeaderContainer>
       <HeaderLeftWrapper>
-        <HeaderLogo src="../../src/assets/images/logo2.png" />
+        <HeaderLogo
+          src="../../src/assets/images/logo2.png"
+          onClick={() => navigate("/")}
+        />
       </HeaderLeftWrapper>
       <HeaderRightWrapper>
         <HeaderRightMenuSection>
@@ -57,6 +63,7 @@ const HeaderRightMenuItem = styled.li`
 const HeaderLogo = styled.img`
   margin-left: 10px;
   width: 90px;
+  cursor: pointer;
 `;
 
 export default HeaderLayout;
