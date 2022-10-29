@@ -1,12 +1,12 @@
 import CommonBasePageComponent from "../components/hoc/CommonBasePageComponent";
 import ReservationSearch from "../components/reservation/common/ReservationSearch";
-import ReservationCard from "../components/reservation/card/ReservationCard";
+import ReservationCardList from "../components/reservation/card/ReservationCardList";
 
 const Reservation = () => {
   return (
     <CommonBasePageComponent>
       <ReservationSearch />
-      <ReservationCard />
+      <ReservationCardList />
     </CommonBasePageComponent>
   );
 };
