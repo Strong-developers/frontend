@@ -16,7 +16,12 @@ const CustomModal = ({
   return (
     <CustomModalBackDrop isModalOpen={isModalOpen}>
       <CustomModalWrapper>
-        <img src="../../src/assets/images/modal-cancel.png" />
+        <CustomModalImgContainer>
+          <CustomModalImg
+            src="../../src/assets/images/modal-cancel.png"
+            onClick={handleChangeModalState}
+          />
+        </CustomModalImgContainer>
         {children}
       </CustomModalWrapper>
     </CustomModalBackDrop>
@@ -45,6 +50,14 @@ const CustomModalWrapper = styled.div`
   border-radius: 8px;
   transform: translate(-50%, -50%);
   background-color: ${Theme.colors.white};
+`;
+
+const CustomModalImgContainer = styled.div``;
+
+const CustomModalImg = styled.img`
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
 `;
 
 export default CustomModal;
