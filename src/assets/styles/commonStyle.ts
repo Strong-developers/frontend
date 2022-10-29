@@ -6,9 +6,10 @@ export const CommonInput = styled.input`
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   box-sizing: border-box;
+  font-size: 16px;
+
   &:focus {
-    border: 1px solid black;
-    outline: none;
+    outline: 1px solid black;
   }
 `;
 
@@ -62,6 +63,14 @@ export const ThemeButton = styled(CommonButtonStyle)`
     background-color: ${Theme.colors.white};
     color: ${Theme.colors.theme};
   }
+`;
+
+export const CommonLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  margin-bottom: 3px;
 `;
 
 export const GridContainer = styled.div`
