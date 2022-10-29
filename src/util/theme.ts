@@ -3,6 +3,7 @@ const Theme = {
     smaller: "0.75rem",
     small: "0.875rem",
     default: "1rem",
+    littleMoreBig: "1.25rem",
     littleBig: "2rem",
     big: "2.5rem",
   },
