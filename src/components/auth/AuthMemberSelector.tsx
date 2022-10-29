@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Theme from "../../util/theme";
 
 const AuthMemberSelector = () => {
   const memberSelection = ["Volunteer", "Shelter"];
@@ -19,6 +20,8 @@ const AuthMemberSelectorContainer = styled.ul`
   padding-bottom: 1rem;
   text-align: center;
   margin-bottom: 1rem;
+  font-weight: ${Theme.fontWeight.bold};
+  font-size: ${Theme.fontSize.littleMoreBig};
 `;
 
 const AuthMemberSeletor = styled.li`
