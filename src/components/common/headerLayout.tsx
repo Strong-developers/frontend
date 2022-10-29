@@ -4,7 +4,9 @@ import Theme from "../../util/theme";
 const HeaderLayout = () => {
   return (
     <HeaderContainer>
-      <HeaderLeftWrapper>Logo</HeaderLeftWrapper>
+      <HeaderLeftWrapper>
+        <HeaderLogo src="../../src/assets/images/logo2.png" />
+      </HeaderLeftWrapper>
       <HeaderRightWrapper>
         <HeaderRightMenuSection>
           <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
@@ -19,6 +21,8 @@ const HeaderLayout = () => {
 };
 
 const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 80px;
   line-height: 80px;
@@ -30,12 +34,10 @@ const HeaderContainer = styled.div`
 
 const HeaderLeftWrapper = styled.div`
   width: 20%;
-  float: left;
 `;
 
 const HeaderRightWrapper = styled.div`
   width: 60%;
-  float: right;
 `;
 
 const HeaderRightMenuSection = styled.ul`
@@ -46,10 +48,15 @@ const HeaderRightMenuItem = styled.li`
   display: inline-block;
   cursor: pointer;
   margin-left: 40px;
-  transition: 0.5s;
+  transition: 0.1s;
   &:hover {
     color: ${Theme.colors.theme};
   }
+`;
+
+const HeaderLogo = styled.img`
+  margin-left: 10px;
+  width: 90px;
 `;
 
 export default HeaderLayout;
