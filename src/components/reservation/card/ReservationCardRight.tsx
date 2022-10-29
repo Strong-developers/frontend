@@ -8,8 +8,8 @@ const ReservationCardRight = () => {
         <ReservationCardTitle>경기도 의정부시</ReservationCardTitle>
         <ReservationCardBody>오늘의 보호소</ReservationCardBody>
         <ReservationCardFooter>
-          <ReservationCardFooterText>Read more</ReservationCardFooterText>
-          <ReservationCardFooterText>Read more</ReservationCardFooterText>
+          <ReservationCardFooterText>READ MORE →</ReservationCardFooterText>
+          <ReservationCardFooterText>RESERVATION</ReservationCardFooterText>
         </ReservationCardFooter>
       </ReservationCardRightWrapper>
     </ReservationCardRightContainer>
@@ -26,6 +26,7 @@ const ReservationCardRightWrapper = styled.div`
 
 const ReservationCardTitle = styled.div`
   padding-top: 1rem;
+  color: ${Theme.colors.silverGray};
   font-size: ${Theme.fontSize.littleMoreBig};
   font-weight: ${Theme.fontWeight.bold};
 `;
@@ -46,6 +47,7 @@ const ReservationCardFooterText = styled.div`
   font-weight: ${Theme.fontWeight.bold};
   cursor: pointer;
   transition: 0.3s;
+  text-align: center;
   &:hover {
     transform: scale(1.1);
   }
