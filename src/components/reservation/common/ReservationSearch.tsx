@@ -10,7 +10,9 @@ const ReservationSearch = () => {
 };
 
 const ReservationSearchContainer = styled.div`
-  width: 30rem;
+  width: 38rem;
+  margin: 0 auto;
+  margin-top: 1rem;
 `;
 
 const ReservationSearchInput = styled(CommonInput)`
