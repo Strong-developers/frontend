@@ -12,14 +12,15 @@ const CalendarComponentPage = React.lazy(
 const CustomRouter = () => {
   return (
     <React.Fragment>
-      <Suspense fallback={<div>Loading</div>} />
-      <HeaderLayout />
-      <Routes>
-        <Route path="/" element={<MainComponentPage />} />
-        <Route path="/login" element={<LoginComponentPage />} />
-        <Route path="/register" element={<RegisterComponentPage />} />
-        <Route path="/reserve" element={<CalendarComponentPage />} />
-      </Routes>
+      <Suspense fallback={<div>Loading</div>}>
+        <HeaderLayout />
+        <Routes>
+          <Route path="/" element={<MainComponentPage />} />
+          <Route path="/login" element={<LoginComponentPage />} />
+          <Route path="/register" element={<RegisterComponentPage />} />
+          <Route path="/reserve" element={<CalendarComponentPage />} />
+        </Routes>
+      </Suspense>
     </React.Fragment>
   );
 };
