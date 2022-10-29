@@ -1,7 +1,7 @@
 import React from "react";
 import CustomRouter from "./router/CustomRouter";
-import GlobalStyle from "./assets/styles/globalStyle";
 import CommonErrorBoundary from "./components/errorBoundary/CommonErrorBoundary";
+import GlobalStyle from "./assets/styles/globalStyle";
 
 function App() {
   return (
