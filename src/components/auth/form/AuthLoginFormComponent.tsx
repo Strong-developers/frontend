@@ -68,7 +68,7 @@ const AuthLoginLabel = styled(CommonLabel)`
 
 const AuthLoginInput = styled(CommonInput)`
   margin-top: 5px;
-  height: 40px;
+  height: 2.5rem;
   width: 100%;
 `;
 

@@ -103,7 +103,7 @@ const AuthRegisterLabel = styled(CommonLabel)`
 const AuthRegisterInput = styled(CommonInput)`
   width: 100%;
   margin-top: 5px;
-  height: 40px;
+  height: 2.5rem;
 `;
 
 const AuthRegisterButtonContainer = styled.div`
