@@ -19,7 +19,8 @@
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.4.2",
     "styled-components": "^5.3.6",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "vite-plugin-favicon": "^1.0.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
