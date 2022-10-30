@@ -16,6 +16,7 @@ const Theme = {
     white: "#ffffff",
     black: "#000000",
     darkBlack: "#4F4F4F",
+    tpBlack: "#212121",
     littleGray: "rgb(0, 0, 0, 0.10)",
     silverGray: "#949494",
     theme: "#00ccff",
