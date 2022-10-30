@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Calendar from "../../pages/Calendar";
+import Calendar from "../calendar/Calendar";
 import CommonBaseReservationWrapper from "../hoc/CommonBaseReservationWrapper";
 
 const ReservationCalendar = () => {
