@@ -36,7 +36,7 @@ const ErrorComponentWrapper = styled.div`
 `;
 
 const ErrorComponentTitle = styled.p`
-  font-size: ${Theme.fontSize.moreBig};
+  font-size: ${Theme.fontSize.littleBig};
   font-weight: ${Theme.fontWeight.bold};
   margin-top: -3rem;
 `;
@@ -46,7 +46,7 @@ const ErrorComponentLink = styled.a`
   text-decoration: none;
   cursor: pointer;
   color: ${Theme.colors.black};
-  font-size: ${Theme.fontSize.littleBig};
+  font-size: ${Theme.fontSize.littleMoreBig};
   font-weight: ${Theme.fontWeight.bold};
   border-bottom: 3px solid ${Theme.colors.black};
   transition: 0.5s;
