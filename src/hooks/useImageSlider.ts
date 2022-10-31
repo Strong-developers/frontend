@@ -16,8 +16,6 @@ const useImageSlider = (imageArray: Array<string>) => {
     [imageArray]
   );
 
-  console.log(document.body.offsetWidth - document.body.clientWidth);
-
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWidth(window.innerWidth - scrollBarWidth);
