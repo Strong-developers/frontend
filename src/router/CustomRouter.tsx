@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import HeaderLayout from "../components/common/headerLayout";
+import LoadingSpinner from "../components/spinner/LoadingSpinner";
 
 const MainComponentPage = React.lazy(() => import("../pages/Main"));
 const LoginComponentPage = React.lazy(() => import("../pages/Login"));
@@ -11,11 +12,12 @@ const CalendarComponentPage = React.lazy(
 const ReservationComponentPage = React.lazy(
   () => import("../pages/Reservation")
 );
+const MyInformationComponentPage = React.lazy(() => import("../pages/MyPage"));
 
 const CustomRouter = () => {
   return (
     <React.Fragment>
-      <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <HeaderLayout />
         <Routes>
           <Route path="/" element={<MainComponentPage />} />
@@ -23,6 +25,7 @@ const CustomRouter = () => {
           <Route path="/register" element={<RegisterComponentPage />} />
           <Route path="/reserve" element={<CalendarComponentPage />} />
           <Route path="/shelters" element={<ReservationComponentPage />} />
+          <Route path="/mypage" element={<MyInformationComponentPage />} />
         </Routes>
       </Suspense>
     </React.Fragment>

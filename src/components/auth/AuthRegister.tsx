@@ -3,7 +3,6 @@ import AuthCommonHeader from "./common/AuthCommonHeader";
 import AuthMemberSelector from "./AuthMemberSelector";
 import AuthRegisterFormComponent from "./form/AuthRegisterFormComponent";
 import { AuthFormPropsType } from "../../types/auth/authType";
-import Theme from "../../util/theme";
 
 const AuthRegister = ({ register, errors }: AuthFormPropsType) => {
   return (
@@ -23,6 +22,4 @@ const AuthRegisterFormContainer = styled.div`
   margin-top: 1rem;
   padding: 1rem;
   font-weight: bold;
-  border: 1px solid ${Theme.colors.black};
-  border-radius: 8px;
 `;

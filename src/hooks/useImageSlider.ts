@@ -1,30 +1,38 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect, useMemo } from "react";
 
-interface UseImageSliderReturnType {
-  curIndex: number;
-  handleNextButtonClick: () => void;
-  handlePrevButtonClick: () => void;
-}
+const scrollBarWidth = 17;
 
-const useImageSlider = (totalIamgeLength: number): UseImageSliderReturnType => {
-  const [curIndex, setCurIndex] = useState<number>(0);
+const useImageSlider = (imageArray: Array<string>) => {
+  const [width, setWidth] = useState(window.innerWidth - scrollBarWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
-  const handleNextButtonClick = useCallback(() => {
-    curIndex === totalIamgeLength - 1
-      ? setCurIndex(0)
-      : setCurIndex((prev) => prev + 1);
-  }, [curIndex, setCurIndex]);
+  const imageUrls = useMemo(
+    () =>
+      imageArray.map((img) => {
+        return {
+          url: `../src/assets/images/${img}`,
+        };
+      }),
+    [imageArray]
+  );
 
-  const handlePrevButtonClick = useCallback(() => {
-    curIndex === 0
-      ? setCurIndex(totalIamgeLength - 1)
-      : setCurIndex((prev) => prev - 1);
-  }, [curIndex, setCurIndex]);
+  console.log(document.body.offsetWidth - document.body.clientWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth - scrollBarWidth);
+      setHeight(window.innerHeight);
+    });
+    return () => {
+      setWidth(window.innerWidth - scrollBarWidth);
+      setHeight(window.innerHeight);
+    };
+  }, []);
 
   return {
-    curIndex,
-    handleNextButtonClick,
-    handlePrevButtonClick,
+    width,
+    height,
+    imageUrls,
   };
 };
 
