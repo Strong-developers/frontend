@@ -43,7 +43,10 @@ const Pagination = () => {
 
 export default Pagination;
 
-const PaginationContainer = styled.div``;
+const PaginationContainer = styled.div`
+  font-size: ${Theme.fontSize.small};
+  text-align: center;
+`;
 
 const PageNumberButton = styled.button<{ pageNumber: number; curPage: number }>`
   height: 40px;
@@ -51,6 +54,7 @@ const PageNumberButton = styled.button<{ pageNumber: number; curPage: number }>`
   background-color: transparent;
   border-radius: 50%;
   border: none;
+
   cursor: pointer;
   ${(props) =>
     props.pageNumber === props.curPage &&
