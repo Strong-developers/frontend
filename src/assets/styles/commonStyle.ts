@@ -89,3 +89,15 @@ export const CalendarGridCell = styled.div`
   color: ${Theme.colors.silverGray};
   font-size: ${Theme.fontSize.default};
 `;
+
+export const CommonTextBox = styled.div`
+  width: 100%;
+  margin: 25px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid ${Theme.colors.silverGray};
+  white-space: pre-wrap;
+  overflow: auto;
+  text-align: left;
+  box-sizing: border-box;
+`;
