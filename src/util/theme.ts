@@ -4,6 +4,7 @@ const Theme = {
     small: "0.875rem",
     default: "1rem",
     littleMoreBig: "1.25rem",
+    littleMoreBigger: "1.5rem",
     littleBig: "2rem",
     big: "2.5rem",
     moreBig: "3.45rem",

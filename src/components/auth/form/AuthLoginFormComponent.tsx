@@ -50,9 +50,7 @@ const AuthLoginFormComponent = ({ register, errors }: AuthFormPropsType) => {
           <AuthPasswordForgotText>
             아직 회원이 아니신가요?
           </AuthPasswordForgotText>
-          <AuthPasswordForgotLink to="/register">
-            회원가입
-          </AuthPasswordForgotLink>
+          <AuthPasswordForgotLink to="/join">회원가입</AuthPasswordForgotLink>
         </AuthPasswordContainer>
       </AuthLoginButtonContainer>
     </AuthLoginForm>
