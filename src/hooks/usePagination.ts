@@ -7,7 +7,7 @@ const usePagination = (
 ) => {
   const [curPage, setCurPage] = useState(page);
 
-  const pageLength = useMemo<number>(
+  const pageLength = useMemo(
     () => Math.ceil(totalPages / divider),
     [totalPages, divider]
   );
