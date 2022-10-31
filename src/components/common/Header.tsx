@@ -1,25 +1,58 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { getCategoryRequest } from "../../api/mainFetcher";
+import { CommonCategoryType } from "../../types/commonCategoryType";
 import Theme from "../../util/theme";
 
-const HeaderLayout = () => {
+const Header = () => {
+  const [categoryItems, setCategoryItems] = useState<Array<CommonCategoryType>>(
+    []
+  );
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      const { result } = await getCategoryRequest("/category/main");
+      setCategoryItems(
+        result.map((c: CommonCategoryType) => {
+          return {
+            id: c.id,
+            name: c.name,
+            path: c.path,
+          };
+        })
+      );
+    })();
+  }, []);
+
+  const handleLogoImageClick = () => {
+    navigate("/");
+  };
+
+  const handleCategoryClick = (path: string) => () => {
+    navigate(path);
+  };
 
   return (
     <HeaderContainer>
       <HeaderLeftWrapper>
         <HeaderLogo
           src="../../src/assets/images/logo-none-bg.png"
-          onClick={() => navigate("/")}
+          onClick={handleLogoImageClick}
         />
       </HeaderLeftWrapper>
       <HeaderRightWrapper>
         <HeaderRightMenuSection>
-          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
-          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
-          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
-          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
-          <HeaderRightMenuItem>Menu item</HeaderRightMenuItem>
+          {categoryItems.map((c) => (
+            <HeaderRightMenuItem
+              key={c.id}
+              onClick={handleCategoryClick(c.path)}
+            >
+              {c.name}
+            </HeaderRightMenuItem>
+          ))}
         </HeaderRightMenuSection>
       </HeaderRightWrapper>
     </HeaderContainer>
@@ -47,7 +80,8 @@ const HeaderRightWrapper = styled.div`
 `;
 
 const HeaderRightMenuSection = styled.ul`
-  margin-left: 200px;
+  display: flex;
+  justify-content: center;
 `;
 
 const HeaderRightMenuItem = styled.li`
@@ -66,4 +100,4 @@ const HeaderLogo = styled.img`
   cursor: pointer;
 `;
 
-export default HeaderLayout;
+export default Header;
