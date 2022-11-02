@@ -5,7 +5,7 @@ import {
   MdChatBubble,
 } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
-import { IoCalendarNumberOutline } from "react-icons/io5";
+import { IoCalendarNumberOutline, IoNotifications } from "react-icons/io5";
 
 export function createNextButton(size: number, color: string) {
   return <BsArrowRight size={size} color={color} />;
@@ -39,6 +39,10 @@ export function createHeartIcon(size: number, color?: string) {
 
 export function createChatBubble(size: number, color?: string) {
   return <MdChatBubble size={size} color={color} style={commonStyle} />;
+}
+
+export function createNotification(size: number, color?: string) {
+  return <IoNotifications size={size} color={color} style={commonStyle} />;
 }
 
 const commonStyle = { display: "inline-block", verticalAlign: "middle" };
