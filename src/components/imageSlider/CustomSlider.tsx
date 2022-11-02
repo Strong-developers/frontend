@@ -17,6 +17,9 @@ const CustomSlider = ({ imageArray }: CustomSliderProps) => {
         images={imageUrls}
         showBullets={false}
         showNavs={true}
+        autoPlay={true}
+        autoPlayDelay={2}
+        loop={true}
       />
     </SliderContainer>
   );
