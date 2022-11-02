@@ -12,6 +12,7 @@ const CalendarComponentPage = React.lazy(
 const ReservationComponentPage = React.lazy(
   () => import("../pages/Reservation")
 );
+const FeedComponentPage = React.lazy(() => import("../pages/Feed"));
 const MyInformationComponentPage = React.lazy(() => import("../pages/MyPage"));
 
 const CustomRouter = () => {
@@ -25,6 +26,7 @@ const CustomRouter = () => {
           <Route path="/join" element={<RegisterComponentPage />} />
           <Route path="/reservation" element={<CalendarComponentPage />} />
           <Route path="/shelter" element={<ReservationComponentPage />} />
+          <Route path="/feed" element={<FeedComponentPage />} />
           <Route path="/mypage" element={<MyInformationComponentPage />} />
         </Routes>
       </Suspense>
