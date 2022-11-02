@@ -1,15 +1,28 @@
 import styled from "styled-components";
+import { ShelterType } from "../../../types/shelter/shelterType";
 import Theme from "../../../util/theme";
 
-const ReservationCardRight = () => {
+interface ReservationCardRightProps {
+  shelter: ShelterType;
+  onReservationButtonClickEvent: (uid: string) => () => void;
+}
+
+const ReservationCardRight = ({
+  shelter,
+  onReservationButtonClickEvent,
+}: ReservationCardRightProps) => {
   return (
     <ReservationCardRightContainer>
       <ReservationCardRightWrapper>
-        <ReservationCardTitle>경기도 의정부시</ReservationCardTitle>
-        <ReservationCardBody>오늘의 보호소</ReservationCardBody>
+        <ReservationCardTitle>{shelter.region}</ReservationCardTitle>
+        <ReservationCardBody>{shelter.name}</ReservationCardBody>
         <ReservationCardFooter>
           <ReservationCardFooterText>READ MORE →</ReservationCardFooterText>
-          <ReservationCardFooterText>RESERVATION</ReservationCardFooterText>
+          <ReservationCardFooterText
+            onClick={onReservationButtonClickEvent(shelter.uid)}
+          >
+            RESERVATION
+          </ReservationCardFooterText>
         </ReservationCardFooter>
       </ReservationCardRightWrapper>
     </ReservationCardRightContainer>
