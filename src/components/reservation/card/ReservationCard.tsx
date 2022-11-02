@@ -1,13 +1,25 @@
 import styled from "styled-components";
 import ReservationCardLeft from "./ReservationCardLeft";
 import ReservationCardRight from "./ReservationCardRight";
+import { ShelterType } from "../../../types/shelter/shelterType";
 import Theme from "../../../util/theme";
 
-const ReservationCard = () => {
+interface ReservationCardProps {
+  shelter: ShelterType;
+  onReservationButtonClickEvent: (uid: string) => () => void;
+}
+
+const ReservationCard = ({
+  shelter,
+  onReservationButtonClickEvent,
+}: ReservationCardProps) => {
   return (
     <ReservationCardContainer>
       <ReservationCardLeft />
-      <ReservationCardRight />
+      <ReservationCardRight
+        shelter={shelter}
+        onReservationButtonClickEvent={onReservationButtonClickEvent}
+      />
     </ReservationCardContainer>
   );
 };
