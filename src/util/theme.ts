@@ -23,6 +23,14 @@ const Theme = {
     theme: "#00ccff",
     tp: "transparent",
     moreTp: "rgba(0, 0, 0, 0.12)",
+    lessTp: "rgba(0, 0, 0, 0.5)",
+  },
+  spacing: {
+    default: "1rem",
+    big: "2rem",
+    bigger: "3rem",
+    biggest: "5rem",
+    small: "0.5rem",
   },
 };
 
