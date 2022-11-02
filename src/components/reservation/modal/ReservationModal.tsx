@@ -1,12 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
+import useChangePosition from "../../../hooks/useChangePosition";
 import ReservationCalendar from "./ReservationModalCalendar";
 import ReservationModalForm from "./ReservationModalForm";
 import ReservationNotice from "./ReservationModalNotice";
 import ReservationModalButtonContainer from "./ReservationModalButtonContainer";
 import CustomModal from "../../modal/CustomModal";
-import useChangePosition from "../../../hooks/useChangePosition";
+import Theme from "../../../util/theme";
 
 interface ReservationModalPropsType {
   isModalOpen: boolean;
@@ -28,11 +29,10 @@ const ReservationModal = ({
     setCurrentPosition,
     handleNextButtonClick,
     handlePrevButtonClick,
-  } = useChangePosition(3);
+  } = useChangePosition(2);
   const components: ComponentsType = {
-    1: <ReservationNotice />,
-    2: <ReservationCalendar />,
-    3: <ReservationModalForm />,
+    1: <ReservationCalendar />,
+    2: <ReservationModalForm />,
   };
 
   return (
@@ -44,6 +44,7 @@ const ReservationModal = ({
       }}
     >
       <ReservationModalContainer>
+        <ReservationNotice />
         {components[currentPosition]}
       </ReservationModalContainer>
       <ReservationModalButtonContainer
@@ -63,8 +64,9 @@ const ReservationModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: ${Theme.spacing.big};
   position: relative;
   overflow: hidden;
-  width: 550px;
+  width: 1100px;
   height: 700px;
 `;

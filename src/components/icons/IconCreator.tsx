@@ -1,5 +1,9 @@
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { BsArrowRight, BsArrowLeft, BsSuitHeartFill } from "react-icons/bs";
+import {
+  MdArrowBackIosNew,
+  MdArrowForwardIos,
+  MdChatBubble,
+} from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 
@@ -27,6 +31,14 @@ export function createCalendarIcon(size: number, color?: string) {
 
 export function createTimeIcon(size: number, color?: string) {
   return <IoMdTime size={size} color={color} style={commonStyle} />;
+}
+
+export function createHeartIcon(size: number, color?: string) {
+  return <BsSuitHeartFill size={size} color={color} style={commonStyle} />;
+}
+
+export function createChatBubble(size: number, color?: string) {
+  return <MdChatBubble size={size} color={color} style={commonStyle} />;
 }
 
 const commonStyle = { display: "inline-block", verticalAlign: "middle" };
