@@ -24,6 +24,6 @@ export default FeedHeaderRight;
 
 const FeedHeaderRightContainer = styled.div`
   display: flex;
-  width: 22.5rem;
+  width: 30%;
   gap: 50px;
 `;
