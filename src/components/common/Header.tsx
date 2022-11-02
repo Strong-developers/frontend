@@ -1,39 +1,11 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { getCategoryRequest } from "../../api/mainFetcher";
-import { CommonCategoryType } from "../../types/commonCategoryType";
+import useHeader from "../../hooks/header/useHeader";
+import HeaderDropdown from "./HeaderDropdown";
 import Theme from "../../util/theme";
 
 const Header = () => {
-  const [categoryItems, setCategoryItems] = useState<Array<CommonCategoryType>>(
-    []
-  );
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    (async () => {
-      const { result } = await getCategoryRequest("/category/main");
-      setCategoryItems(
-        result.map((c: CommonCategoryType) => {
-          return {
-            id: c.id,
-            name: c.name,
-            path: c.path,
-          };
-        })
-      );
-    })();
-  }, []);
-
-  const handleLogoImageClick = () => {
-    navigate("/");
-  };
-
-  const handleCategoryClick = (path: string) => () => {
-    navigate(path);
-  };
+  const { categoryItems, handleLogoImageClick, handleCategoryClick } =
+    useHeader();
 
   return (
     <HeaderContainer>
@@ -50,7 +22,12 @@ const Header = () => {
               key={c.id}
               onClick={handleCategoryClick(c.path)}
             >
-              {c.name}
+              <ItemText>
+                {c.name}
+                <HeaderChildrenDropdown>
+                  <HeaderDropdown children={c.children} />
+                </HeaderChildrenDropdown>
+              </ItemText>
             </HeaderRightMenuItem>
           ))}
         </HeaderRightMenuSection>
@@ -63,11 +40,10 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 80px;
+  height: 5rem;
   line-height: 80px;
   color: ${Theme.colors.black};
   font-size: ${Theme.fontSize.default};
-  font-weigh: ${Theme.fontWeight.bold};
   background-color: ${Theme.colors.moreTp};
 `;
 
@@ -85,9 +61,9 @@ const HeaderRightMenuSection = styled.ul`
 `;
 
 const HeaderRightMenuItem = styled.li`
-  display: inline-block;
+  display: block;
   cursor: pointer;
-  margin-left: 40px;
+  margin-left: 2.5rem;
   transition: 0.4s;
   &:hover {
     color: ${Theme.colors.theme};
@@ -95,9 +71,24 @@ const HeaderRightMenuItem = styled.li`
 `;
 
 const HeaderLogo = styled.img`
-  margin-left: 10px;
+  margin-left: 0.75rem;
   width: 90px;
   cursor: pointer;
+`;
+
+const ItemText = styled.div`
+  position: relative;
+`;
+
+const HeaderChildrenDropdown = styled.div`
+  position: absolute;
+  z-index: 999;
+  top: 3rem;
+  display: none;
+  ${ItemText}:hover & {
+    display: block;
+    line-height: 1rem;
+  }
 `;
 
 export default Header;
