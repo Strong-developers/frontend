@@ -7,10 +7,12 @@ import ReservationModalForm from "./ReservationModalForm";
 import ReservationNotice from "./ReservationModalNotice";
 import ReservationModalButtonContainer from "./ReservationModalButtonContainer";
 import CustomModal from "../../modal/CustomModal";
+import { ShelterType } from "../../../types/shelter/shelterType";
 import Theme from "../../../util/theme";
 
 interface ReservationModalPropsType {
   isModalOpen: boolean;
+  selectedShelter?: ShelterType;
   onCloseButtonClickEvent: () => void;
 }
 
@@ -20,6 +22,7 @@ interface ComponentsType {
 
 const ReservationModal = ({
   isModalOpen,
+  selectedShelter,
   onCloseButtonClickEvent,
 }: ReservationModalPropsType) => {
   const {
@@ -34,6 +37,9 @@ const ReservationModal = ({
     1: <ReservationCalendar />,
     2: <ReservationModalForm />,
   };
+
+  // 선택된 shelter
+  console.log(selectedShelter);
 
   return (
     <CustomModal

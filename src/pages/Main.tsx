@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import CommonBasePageComponent from "../components/hoc/CommonBasePageComponent";
 import CustomSlider from "../components/imageSlider/CustomSlider";
 import Theme from "../util/theme";
 
 const Main = () => {
+  const navigate = useNavigate();
+
   const imageArray = ["main-bg-01.jpg", "main-bg-02.jpg", "main-bg-03.jpg"];
 
   return (
@@ -15,8 +18,12 @@ const Main = () => {
       <MainTextThree>
         WE ARE THE ONE OF THE WORLD'S TOP CREATIVE DESIGN AGENCIES
       </MainTextThree>
-      <MainExploreButton>EXPLORE</MainExploreButton>
-      <MainRegisterButton>REGISTER</MainRegisterButton>
+      <MainExploreButton onClick={() => navigate("/shelter")}>
+        EXPLORE
+      </MainExploreButton>
+      <MainRegisterButton onClick={() => navigate("/join")}>
+        REGISTER
+      </MainRegisterButton>
     </CommonBasePageComponent>
   );
 };

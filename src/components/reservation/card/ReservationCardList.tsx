@@ -1,13 +1,26 @@
 import styled from "styled-components";
 import { GridContainer } from "../../../assets/styles/commonStyle";
 import ReservationCard from "./ReservationCard";
+import { ShelterType } from "../../../types/shelter/shelterType";
 
-const ReservationCardList = () => {
+interface ReservationCardListProps {
+  shelters: Array<ShelterType>;
+  onReservationButtonClickEvent: (uid: string) => () => void;
+}
+
+const ReservationCardList = ({
+  shelters,
+  onReservationButtonClickEvent,
+}: ReservationCardListProps) => {
   return (
     <ReservationCardWrapper>
       <ReservationCardListContainer>
-        {Array.from({ length: 3 }).map((_, idx) => (
-          <ReservationCard key={idx} />
+        {shelters.map((sh) => (
+          <ReservationCard
+            key={sh.uid}
+            shelter={sh}
+            onReservationButtonClickEvent={onReservationButtonClickEvent}
+          />
         ))}
       </ReservationCardListContainer>
     </ReservationCardWrapper>
