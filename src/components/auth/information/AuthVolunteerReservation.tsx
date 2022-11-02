@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import ReservationAuthDetail from "../../reservation/authReserveDetail/ReservationAuthDetail";
+import ReservationAuthShelterList from "../../reservation/authReserveDetail/ResevationAuthShelterList";
 import Theme from "../../../util/theme";
 
 const AuthVolunteerReservation = () => {
   return (
     <AuthReservationContainer>
       <AuthReservationTitle>RESERVATION</AuthReservationTitle>
-      <AuthReservationHeaderWrapper>Detail</AuthReservationHeaderWrapper>
+      <AuthReservationHeaderWrapper>
+        <ReservationAuthDetail />
+        <ReservationAuthShelterList />
+      </AuthReservationHeaderWrapper>
     </AuthReservationContainer>
   );
 };
@@ -22,6 +27,8 @@ const AuthReservationTitle = styled.p`
 
 const AuthReservationHeaderWrapper = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
   margin-top: 2rem;
   text-align: center;
 `;
