@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCategoryRequest } from "../../api/mainFetcher";
 import { CommonCategoryType } from "../../types/commonCategoryType";
@@ -7,7 +7,6 @@ const useHeader = () => {
   const [categoryItems, setCategoryItems] = useState<Array<CommonCategoryType>>(
     []
   );
-  const [isItemMouseOver, setIsItemMouseOver] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -35,16 +34,10 @@ const useHeader = () => {
     navigate(path);
   };
 
-  const handleItemMouseOver = useCallback(() => {
-    setIsItemMouseOver((prev) => !prev);
-  }, [setIsItemMouseOver]);
-
   return {
     categoryItems,
-    isItemMouseOver,
     handleLogoImageClick,
     handleCategoryClick,
-    handleItemMouseOver,
   };
 };
 
