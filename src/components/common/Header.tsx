@@ -22,12 +22,10 @@ const Header = () => {
               key={c.id}
               onClick={handleCategoryClick(c.path)}
             >
-              <ItemText>
-                {c.name}
-                <HeaderChildrenDropdown>
-                  <HeaderDropdown children={c.children} />
-                </HeaderChildrenDropdown>
-              </ItemText>
+              {c.name}
+              <HeaderChildrenDropdown>
+                <HeaderDropdown children={c.children} />
+              </HeaderChildrenDropdown>
             </HeaderRightMenuItem>
           ))}
         </HeaderRightMenuSection>
@@ -63,7 +61,6 @@ const HeaderRightMenuSection = styled.ul`
 const HeaderRightMenuItem = styled.li`
   display: block;
   cursor: pointer;
-  margin-left: 2.5rem;
   transition: 0.4s;
   &:hover {
     color: ${Theme.colors.theme};
@@ -76,16 +73,12 @@ const HeaderLogo = styled.img`
   cursor: pointer;
 `;
 
-const ItemText = styled.div`
-  position: relative;
-`;
-
 const HeaderChildrenDropdown = styled.div`
   position: absolute;
   z-index: 999;
-  top: 3rem;
+  top: 2rem;
   display: none;
-  ${ItemText}:hover & {
+  ${HeaderRightMenuItem}:hover & {
     display: block;
     line-height: 1rem;
   }
