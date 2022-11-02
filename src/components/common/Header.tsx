@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import HeaderNotification from "./HeaderNotfication";
 import { getCategoryRequest } from "../../api/mainFetcher";
 import { CommonCategoryType } from "../../types/commonCategoryType";
 import Theme from "../../util/theme";
@@ -53,6 +54,7 @@ const Header = () => {
               {c.name}
             </HeaderRightMenuItem>
           ))}
+          <HeaderNotification />
         </HeaderRightMenuSection>
       </HeaderRightWrapper>
     </HeaderContainer>
