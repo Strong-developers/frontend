@@ -5,27 +5,21 @@ import { CommonTitle, CommonSubTitle } from "../../assets/styles/commonStyle";
 
 const FeedHeaderLeft = () => {
   return (
-    <FeedHeaderWrapper>
-      <FeedHeaderLeftContainer>
-        <FeedHeaderImg src="../../src/assets/images/main-bg-01.jpg" />
-        <FeedHeaderTitleContainer>
-          <FeedHeaderLocation>경기 의정부시</FeedHeaderLocation>
-          <FeedHeaderTitle>오늘의 보호소</FeedHeaderTitle>
-        </FeedHeaderTitleContainer>
-      </FeedHeaderLeftContainer>
-    </FeedHeaderWrapper>
+    <FeedHeaderLeftContainer>
+      <FeedHeaderImg src="../../src/assets/images/main-bg-01.jpg" />
+      <FeedHeaderTitleContainer>
+        <FeedHeaderLocation>경기 의정부시</FeedHeaderLocation>
+        <FeedHeaderTitle>오늘의 보호소</FeedHeaderTitle>
+      </FeedHeaderTitleContainer>
+    </FeedHeaderLeftContainer>
   );
 };
 
 export default FeedHeaderLeft;
 
-const FeedHeaderWrapper = styled.div`
-  width: 40rem;
-`;
-
 const FeedHeaderLeftContainer = styled.div`
   display: flex;
-  width: 80%;
+  width: 70%;
   margin: auto;
   align-items: center;
 `;
@@ -43,7 +37,7 @@ const FeedHeaderImg = styled.img`
 `;
 
 const FeedHeaderTitle = styled(CommonTitle)`
-  width: 16rem;
+  width: 30rem;
 `;
 
 const FeedHeaderLocation = styled(CommonSubTitle)``;
