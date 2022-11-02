@@ -103,7 +103,7 @@ export const CommonTextBox = styled.div`
 `;
 
 export const CommonTitle = styled.div`
-  font-size: ${Theme.fontSize.big};
+  font-size: ${Theme.fontSize.moreBig};
   font-weight: ${Theme.fontWeight.bold};
 `;
 

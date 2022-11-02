@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import useHeader from "../../hooks/header/useHeader";
+import HeaderNotification from "./HeaderNotfication";
 import HeaderDropdown from "./HeaderDropdown";
 import Theme from "../../util/theme";
 
@@ -28,6 +29,7 @@ const Header = () => {
               </HeaderChildrenDropdown>
             </HeaderRightMenuItem>
           ))}
+          <HeaderNotification />
         </HeaderRightMenuSection>
       </HeaderRightWrapper>
     </HeaderContainer>

@@ -23,7 +23,7 @@ const FeedCardWrapper = styled.div`
   position: relative;
   text-align: center;
   vertical-align: middle;
-  margin-bottom: ${Theme.spacing.big};
+  margin-bottom: ${Theme.spacing.bigger};
 `;
 
 const FeedImgContainer = styled.div`
