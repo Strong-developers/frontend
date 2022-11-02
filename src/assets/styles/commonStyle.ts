@@ -101,3 +101,13 @@ export const CommonTextBox = styled.div`
   text-align: left;
   box-sizing: border-box;
 `;
+
+export const CommonTitle = styled.div`
+  font-size: ${Theme.fontSize.big};
+  font-weight: ${Theme.fontWeight.bold};
+`;
+
+export const CommonSubTitle = styled.div`
+  font-size: ${Theme.fontSize.littleMoreBig};
+  color: ${Theme.colors.silverGray};
+`;
