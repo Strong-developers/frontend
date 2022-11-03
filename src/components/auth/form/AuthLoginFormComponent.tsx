@@ -10,9 +10,13 @@ import CommonBaseValidationTextContainer from "../../hoc/CommonBaseValidationTex
 import { AuthFormPropsType } from "../../../types/auth/authType";
 import Theme from "../../../util/theme";
 
-const AuthLoginFormComponent = ({ register, errors }: AuthFormPropsType) => {
+const AuthLoginFormComponent = ({
+  register,
+  errors,
+  onLoginSubmitEvent,
+}: AuthFormPropsType) => {
   return (
-    <AuthLoginForm>
+    <AuthLoginForm onSubmit={onLoginSubmitEvent}>
       <CommonBaseInputContainer>
         <AuthLoginLabel>이메일</AuthLoginLabel>
         <AuthLoginInput
@@ -28,14 +32,13 @@ const AuthLoginFormComponent = ({ register, errors }: AuthFormPropsType) => {
       </CommonBaseInputContainer>
       <CommonBaseInputContainer>
         <AuthLoginLabel>비밀번호</AuthLoginLabel>
-        <AuthLoginInput
+        <AuthLoginInputPasswordInput
           {...register("password", {
             required: true,
             minLength: 8,
             maxLength: 15,
             pattern: /^.(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/,
           })}
-          type="password"
           placeholder="비밀번호를 입력해 주세요"
         />
         {errors.password && (
@@ -69,6 +72,10 @@ const AuthLoginInput = styled(CommonInput)`
   margin-top: 0.5rem;
   height: 2.5rem;
   width: 100%;
+`;
+
+const AuthLoginInputPasswordInput = styled(AuthLoginInput)`
+  -webkit-text-security: square;
 `;
 
 const AuthLoginButtonContainer = styled.div`
