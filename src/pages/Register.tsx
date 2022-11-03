@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../hooks/auth/useAuth";
 import CommonBasePageComponent from "../components/hoc/CommonBasePageComponent";
 import AuthRegister from "../components/auth/AuthRegister";
 import { AuthFormType } from "../types/auth/authType";
@@ -7,6 +8,7 @@ import { AuthFormType } from "../types/auth/authType";
 const Register = () => {
   const {
     register,
+    handleSubmit,
     watch,
     formState: { errors },
   } = useForm<AuthFormType>({
@@ -18,10 +20,15 @@ const Register = () => {
       confirmPassword: "",
     },
   });
+  const { handleRegisterSubmit } = useAuth();
 
   return (
     <CommonBasePageComponent>
-      <AuthRegister register={register} errors={errors} />
+      <AuthRegister
+        onRegisterSubmitEvent={handleSubmit(handleRegisterSubmit)}
+        register={register}
+        errors={errors}
+      />
     </CommonBasePageComponent>
   );
 };

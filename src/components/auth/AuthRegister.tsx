@@ -4,12 +4,20 @@ import AuthMemberSelector from "./AuthMemberSelector";
 import AuthRegisterFormComponent from "./form/AuthRegisterFormComponent";
 import { AuthFormPropsType } from "../../types/auth/authType";
 
-const AuthRegister = ({ register, errors }: AuthFormPropsType) => {
+const AuthRegister = ({
+  register,
+  errors,
+  onRegisterSubmitEvent,
+}: AuthFormPropsType) => {
   return (
     <AuthRegisterFormContainer>
       <AuthCommonHeader />
       <AuthMemberSelector />
-      <AuthRegisterFormComponent register={register} errors={errors} />
+      <AuthRegisterFormComponent
+        register={register}
+        errors={errors}
+        onRegisterSubmitEvent={onRegisterSubmitEvent}
+      />
     </AuthRegisterFormContainer>
   );
 };

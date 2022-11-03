@@ -3,11 +3,19 @@ import AuthCommonHeader from "./common/AuthCommonHeader";
 import AuthLoginFormComponent from "./form/AuthLoginFormComponent";
 import { AuthFormPropsType } from "../../types/auth/authType";
 
-const AuthLogin = ({ register, errors }: AuthFormPropsType) => {
+const AuthLogin = ({
+  register,
+  errors,
+  onLoginSubmitEvent,
+}: AuthFormPropsType) => {
   return (
     <AuthLoginFormContainer>
       <AuthCommonHeader />
-      <AuthLoginFormComponent register={register} errors={errors} />
+      <AuthLoginFormComponent
+        register={register}
+        errors={errors}
+        onLoginSubmitEvent={onLoginSubmitEvent}
+      />
     </AuthLoginFormContainer>
   );
 };
