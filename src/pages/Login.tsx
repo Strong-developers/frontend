@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../hooks/auth/useAuth";
 import CommonBasePageComponent from "../components/hoc/CommonBasePageComponent";
 import AuthLogin from "../components/auth/AuthLogin";
 import { AuthFormType } from "../types/auth/authType";
@@ -7,6 +8,7 @@ import { AuthFormType } from "../types/auth/authType";
 const Login = () => {
   const {
     register,
+    handleSubmit,
     watch,
     formState: { errors },
   } = useForm<AuthFormType>({
@@ -16,10 +18,15 @@ const Login = () => {
       password: "",
     },
   });
+  const { handleLoginSubmit } = useAuth();
 
   return (
     <CommonBasePageComponent>
-      <AuthLogin register={register} errors={errors} />
+      <AuthLogin
+        register={register}
+        errors={errors}
+        onLoginSubmitEvent={handleSubmit(handleLoginSubmit)}
+      />
     </CommonBasePageComponent>
   );
 };
