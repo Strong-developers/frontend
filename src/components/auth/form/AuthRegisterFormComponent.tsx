@@ -10,9 +10,13 @@ import CommonBaseValidationTextContainer from "../../hoc/CommonBaseValidationTex
 import { AuthFormPropsType } from "../../../types/auth/authType";
 import Theme from "../../../util/theme";
 
-const AuthRegisterFormComponent = ({ register, errors }: AuthFormPropsType) => {
+const AuthRegisterFormComponent = ({
+  register,
+  errors,
+  onRegisterSubmitEvent,
+}: AuthFormPropsType) => {
   return (
-    <AuthRegisterForm>
+    <AuthRegisterForm onSubmit={onRegisterSubmitEvent}>
       <CommonBaseInputContainer>
         <AuthRegisterLabel>
           이메일
@@ -52,14 +56,13 @@ const AuthRegisterFormComponent = ({ register, errors }: AuthFormPropsType) => {
       <CommonBaseInputContainer>
         <AuthRegisterLabel>
           비밀번호
-          <AuthRegisterInput
+          <AuthRegisterPasswordInput
             {...register("password", {
               required: true,
               minLength: 8,
               maxLength: 15,
               pattern: /^.(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/,
             })}
-            type="password"
             placeholder="비밀번호를 입력해 주세요"
           />
         </AuthRegisterLabel>
@@ -72,11 +75,10 @@ const AuthRegisterFormComponent = ({ register, errors }: AuthFormPropsType) => {
       <CommonBaseInputContainer>
         <AuthRegisterLabel>
           비밀번호 확인
-          <AuthRegisterInput
+          <AuthRegisterPasswordInput
             {...register("confirmPassword", {
               required: true,
             })}
-            type="password"
             placeholder="비밀번호를 입력해 주세요"
           />
         </AuthRegisterLabel>
@@ -105,6 +107,10 @@ const AuthRegisterInput = styled(CommonInput)`
   width: 100%;
   margin-top: 0.5rem;
   height: 2.5rem;
+`;
+
+const AuthRegisterPasswordInput = styled(AuthRegisterInput)`
+  -webkit-text-security: square;
 `;
 
 const AuthRegisterButtonContainer = styled.div`
