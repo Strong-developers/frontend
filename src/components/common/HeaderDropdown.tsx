@@ -10,7 +10,8 @@ const HeaderDropdown = ({ children }: HeaderDropdownProps) => {
   return (
     <HeaderDropdownList>
       <GridListText>
-        {children && children.map((ch) => <ListText>{ch.name}</ListText>)}
+        {children &&
+          children.map((ch) => <ListText key={ch.id}>{ch.name}</ListText>)}
       </GridListText>
     </HeaderDropdownList>
   );
