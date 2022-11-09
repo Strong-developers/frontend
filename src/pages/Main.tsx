@@ -1,6 +1,6 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import CommonBasePageComponent from "../components/hoc/CommonBasePageComponent";
 import CustomSlider from "../components/imageSlider/CustomSlider";
 import Theme from "../util/theme";
 
@@ -8,9 +8,8 @@ const Main = () => {
   const navigate = useNavigate();
 
   const imageArray = ["main-bg-01.jpg", "main-bg-02.jpg", "main-bg-03.jpg"];
-
   return (
-    <CommonBasePageComponent>
+    <React.Fragment>
       <CustomSlider imageArray={imageArray} />
       <MainLogoText>VOLUNTEERS</MainLogoText>
       <MainTextOne>SHELTER FOR ABANDONED DOG</MainTextOne>
@@ -24,7 +23,7 @@ const Main = () => {
       <MainRegisterButton onClick={() => navigate("/join")}>
         REGISTER
       </MainRegisterButton>
-    </CommonBasePageComponent>
+    </React.Fragment>
   );
 };
 
