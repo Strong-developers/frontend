@@ -4,15 +4,19 @@ import Theme from "../../util/theme";
 import { createBackButton, createForwardButton } from "../icons/IconCreator";
 import usePagination from "../../hooks/usePagination";
 
-const Pagination = () => {
-  const totalPage = 56;
+interface PaginationProps {
+  totalPage: number;
+  curPage: number;
+  setCurPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Pagination = ({ totalPage, curPage, setCurPage }: PaginationProps) => {
   const {
-    curPage,
     pageList,
     handleNextPageClick,
     handlePrevPageClick,
     handlePageNumberClick,
-  } = usePagination(totalPage);
+  } = usePagination(totalPage, curPage, setCurPage);
   return (
     <PaginationContainer>
       <PageNavButton
