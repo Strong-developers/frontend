@@ -1,22 +1,24 @@
 import styled from "styled-components";
 import { GridContainer } from "../../assets/styles/commonStyle";
 import ReviewCard from "./ReviewCard";
+import { ReviewType } from "../../types/review/reviewType";
 
-const ReviewContainer = () => {
+interface ReviewContainerProps {
+  reviews: Array<ReviewType>;
+}
+
+const ReviewContainer = ({ reviews }: ReviewContainerProps) => {
   return (
     <ReviewContainerWrapper>
       <ReviewCardListContainer>
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
+        {reviews.map((rev) => (
+          <ReviewCard
+            key={rev.id}
+            description={rev.description}
+            nickname={rev.User.nickname}
+            profileUrl={rev.User.profileUrl}
+          />
+        ))}
       </ReviewCardListContainer>
     </ReviewContainerWrapper>
   );
