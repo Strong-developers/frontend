@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 
-const scrollBarWidth = 17;
+const scrollBarWidth = 0;
 
 const useImageSlider = (imageArray: Array<string>) => {
   const [width, setWidth] = useState(window.innerWidth - scrollBarWidth);
