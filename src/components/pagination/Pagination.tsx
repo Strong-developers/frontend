@@ -5,18 +5,18 @@ import { createBackButton, createForwardButton } from "../icons/IconCreator";
 import usePagination from "../../hooks/usePagination";
 
 interface PaginationProps {
-  totalPage: number;
+  totalPages: number;
   curPage: number;
   setCurPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Pagination = ({ totalPage, curPage, setCurPage }: PaginationProps) => {
+const Pagination = ({ totalPages, curPage, setCurPage }: PaginationProps) => {
   const {
     pageList,
     handleNextPageClick,
     handlePrevPageClick,
     handlePageNumberClick,
-  } = usePagination(totalPage, curPage, setCurPage);
+  } = usePagination(totalPages, curPage, setCurPage);
   return (
     <PaginationContainer>
       <PageNavButton
@@ -37,7 +37,7 @@ const Pagination = ({ totalPage, curPage, setCurPage }: PaginationProps) => {
       ))}
       <PageNavButton
         onClick={handleNextPageClick}
-        disabled={curPage === totalPage && true}
+        disabled={curPage === totalPages && true}
       >
         {createForwardButton(16)}
       </PageNavButton>
