@@ -1,13 +1,18 @@
 import styled from "styled-components";
 import Theme from "../../util/theme";
 
-const ReviewFooter = () => {
+interface ReviewFooterProps {
+  nickname: string;
+  profileUrl: string;
+}
+
+const ReviewFooter = ({ nickname, profileUrl }: ReviewFooterProps) => {
   return (
     <ReviewFooterContainer>
       <ReviewUserContainer>
-        <ReviewFooterUserImg src="../../src/assets/images/main-bg-03.jpg" />
+        <ReviewFooterUserImg src={profileUrl} />
         <ReviewUserTextContainer>
-          <ReviewUserNickname>FoxMon</ReviewUserNickname>
+          <ReviewUserNickname>{nickname}</ReviewUserNickname>
           <ReviewUserCity>의정부시</ReviewUserCity>
         </ReviewUserTextContainer>
       </ReviewUserContainer>
