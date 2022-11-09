@@ -4,12 +4,18 @@ import ReviewBody from "./ReviewBody";
 import ReviewFooter from "./ReviewFooter";
 import Theme from "../../util/theme";
 
-const ReviewCard = () => {
+interface ReviewCardProps {
+  description: string;
+  nickname: string;
+  profileUrl: string;
+}
+
+const ReviewCard = ({ description, nickname, profileUrl }: ReviewCardProps) => {
   return (
     <ReviewCardContainer>
       <ReviewHeader />
-      <ReviewBody />
-      <ReviewFooter />
+      <ReviewBody description={description} />
+      <ReviewFooter nickname={nickname} profileUrl={profileUrl} />
     </ReviewCardContainer>
   );
 };
