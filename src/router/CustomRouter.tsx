@@ -15,6 +15,7 @@ const ReservationComponentPage = React.lazy(
 const FeedComponentPage = React.lazy(() => import("../pages/Feed"));
 const MyInformationComponentPage = React.lazy(() => import("../pages/MyPage"));
 const ChatComponentPage = React.lazy(() => import("../pages/Chat"));
+const ReviewComponentPage = React.lazy(() => import("../pages/Review"));
 
 const CustomRouter = () => {
   return (
@@ -30,6 +31,7 @@ const CustomRouter = () => {
           <Route path="/feed" element={<FeedComponentPage />} />
           <Route path="/mypage" element={<MyInformationComponentPage />} />
           <Route path="/chat" element={<ChatComponentPage />} />
+          <Route path="/review" element={<ReviewComponentPage />} />
         </Routes>
       </Suspense>
     </React.Fragment>
