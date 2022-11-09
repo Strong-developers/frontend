@@ -111,3 +111,12 @@ export const CommonSubTitle = styled.div`
   font-size: ${Theme.fontSize.littleMoreBig};
   color: ${Theme.colors.silverGray};
 `;
+
+export const ChatHeader = styled.div`
+  width: 100%;
+  height: 5rem;
+  padding: 0 ${Theme.spacing.default};
+  box-sizing: border-box;
+  border-bottom: 1px solid ${Theme.colors.littleGray};
+  flex-shrink: 0;
+`;
