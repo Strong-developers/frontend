@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
   BorderDarkBlackButton,
@@ -10,9 +11,12 @@ const FeedHeaderRight = ({
 }: {
   onReservationModalOpenEvent: () => void;
 }) => {
+  const navigate = useNavigate();
   return (
     <FeedHeaderRightContainer>
-      <BorderDarkBlackButton>실시간 채팅</BorderDarkBlackButton>
+      <BorderDarkBlackButton onClick={() => navigate("/chat")}>
+        실시간 채팅
+      </BorderDarkBlackButton>
       <ThemeBorderButton onClick={onReservationModalOpenEvent}>
         예약하기
       </ThemeBorderButton>
