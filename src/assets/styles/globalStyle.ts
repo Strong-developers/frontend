@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     src: local("Sebang"), url(${Sebang});
   }
   html,
-  body {
+  body,
+  #root {
     font-family: "sebang";
     height: 100%;
     width: 100%;
