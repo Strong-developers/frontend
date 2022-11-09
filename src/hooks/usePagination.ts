@@ -1,12 +1,12 @@
-import { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 
 const usePagination = (
   totalPages: number,
+  curPage: number,
+  setCurPage: React.Dispatch<React.SetStateAction<number>>,
   page: number = 1,
   divider: number = 10
 ) => {
-  const [curPage, setCurPage] = useState(page);
-
   const pageLength = useMemo(
     () => Math.ceil(totalPages / divider),
     [totalPages, divider]
