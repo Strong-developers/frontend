@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 const useInfiniteScroll = (
-  fetchCallback: () => void,
+  totalPages: number,
   target: React.RefObject<HTMLDivElement>,
-  totalPages: number
+  fetchCallback: () => void
 ) => {
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);

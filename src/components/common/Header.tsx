@@ -37,6 +37,8 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.div`
+  position: fixed;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   width: 100%;

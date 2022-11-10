@@ -8,6 +8,9 @@ const CommonBasePageComponent = ({ children }: CommonComponentType) => {
 
 const CommonBaseContainer = styled.div`
   width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  box-sizing: border-box;
 `;
 
 export default CommonBasePageComponent;

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import useReview from "../hooks/review/useReview";
 import ReviewContainer from "../components/review/ReviewContainer";
+import Pagination from "../components/pagination/Pagination";
 import Theme from "../util/theme";
 
 const Review = () => {
-  const { reviews } = useReview();
+  const { reviews, totalPages, curPage, setCurPage } = useReview();
 
   return (
     <ReviewWrapper>
@@ -12,6 +13,11 @@ const Review = () => {
         <ReviewText>후기 게시판</ReviewText>
       </ReviewTitleContainer>
       <ReviewContainer reviews={reviews} />
+      <Pagination
+        totalPages={totalPages}
+        curPage={curPage}
+        setCurPage={setCurPage}
+      />
     </ReviewWrapper>
   );
 };

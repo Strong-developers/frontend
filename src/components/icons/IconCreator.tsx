@@ -6,6 +6,7 @@ import {
 } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 import { IoCalendarNumberOutline, IoNotifications } from "react-icons/io5";
+import { AiOutlineSend } from "react-icons/ai";
 
 export function createNextButton(size: number, color: string) {
   return <BsArrowRight size={size} color={color} />;
@@ -43,6 +44,10 @@ export function createChatBubble(size: number, color?: string) {
 
 export function createNotification(size: number, color?: string) {
   return <IoNotifications size={size} color={color} style={commonStyle} />;
+}
+
+export function createSendIcon(size: number, color?: string) {
+  return <AiOutlineSend size={size} color={color} style={commonStyle} />;
 }
 
 const commonStyle = { display: "inline-block", verticalAlign: "middle" };
