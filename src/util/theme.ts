@@ -21,6 +21,7 @@ const Theme = {
     littleGray: "rgb(0, 0, 0, 0.10)",
     silverGray: "#949494",
     theme: "#00ccff",
+    softTheme: "#99e7fd",
     tp: "transparent",
     moreTp: "rgba(0, 0, 0, 0.12)",
     lessTp: "rgba(0, 0, 0, 0.5)",
