@@ -1,5 +1,5 @@
 export interface ReviewType {
-  User: {
+  user: {
     id: number;
     nickname: string;
     profileUrl: string;
