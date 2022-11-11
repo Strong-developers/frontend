@@ -15,8 +15,8 @@ const ReviewContainer = ({ reviews }: ReviewContainerProps) => {
           <ReviewCard
             key={rev.id}
             description={rev.description}
-            nickname={rev.User.nickname}
-            profileUrl={rev.User.profileUrl}
+            nickname={rev.user.nickname}
+            profileUrl={rev.user.profileUrl}
           />
         ))}
       </ReviewCardListContainer>
@@ -26,14 +26,15 @@ const ReviewContainer = ({ reviews }: ReviewContainerProps) => {
 
 const ReviewContainerWrapper = styled.div`
   width: 100%;
+  flex-grow: 1;
   display: grid;
-  padding-bottom: 1rem;
+  box-sizing: border-box;
 `;
 
 const ReviewCardListContainer = styled(GridContainer)`
   place-items: center;
-  gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 `;
 
 export default ReviewContainer;
