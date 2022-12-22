@@ -1,25 +1,24 @@
-import React from "react";
 import styled from "styled-components";
 import Theme from "../../../util/theme";
 
-const ReservationModalNoticeHeader = () => {
+const UserReservationNoticeHeader = () => {
   return (
-    <ReservationModalNoticeHeaderContainer>
+    <UserReservationNoticeHeaderContainer>
       <ShelterTitle>오늘의 보호소</ShelterTitle>
       <ShelterLocation>경기도 의정부시</ShelterLocation>
-    </ReservationModalNoticeHeaderContainer>
+    </UserReservationNoticeHeaderContainer>
   );
 };
 
-export default ReservationModalNoticeHeader;
-const ReservationModalNoticeHeaderContainer = styled.div`
+export default UserReservationNoticeHeader;
+const UserReservationNoticeHeaderContainer = styled.div`
   text-align: left;
 `;
-const ShelterTitle = styled.div`
+const ShelterTitle = styled.h2`
   font-size: ${Theme.fontSize.moreBig};
   font-weight: ${Theme.fontWeight.bold};
 `;
 
-const ShelterLocation = styled.div`
+const ShelterLocation = styled.p`
   color: ${Theme.colors.silverGray};
 `;
