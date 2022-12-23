@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import Theme from "../../../util/theme";
-import CommonBaseInputContainer from "../../hoc/CommonBaseInputContainer";
-import CommonBaseReservationModal from "../../hoc/CommonBaseReservationModal";
 import {
   CommonInput,
   CommonLabel,
   ThemeButton,
+  FormInputContainer,
 } from "../../../assets/styles/commonStyle";
 
 const UserReservationForm = () => {
@@ -15,36 +14,36 @@ const UserReservationForm = () => {
         상제 정보를 입력해주세요
       </UserReservationFormTitle>
       <UserReservationFormContainer>
-        <CommonBaseInputContainer>
+        <FormInputContainer>
           <UserReservationFormLabel>
             이름
             <UserReservationFormInput />
           </UserReservationFormLabel>
-        </CommonBaseInputContainer>
-        <CommonBaseInputContainer>
+        </FormInputContainer>
+        <FormInputContainer>
           <UserReservationFormLabel>
             인원
             <UserReservationFormInput />
           </UserReservationFormLabel>
-        </CommonBaseInputContainer>
-        <CommonBaseInputContainer>
+        </FormInputContainer>
+        <FormInputContainer>
           <UserReservationFormLabel>
             이메일
             <UserReservationFormInput />
           </UserReservationFormLabel>
-        </CommonBaseInputContainer>
-        <CommonBaseInputContainer>
+        </FormInputContainer>
+        <FormInputContainer>
           <UserReservationFormLabel>
             연락처
             <UserReservationFormInput placeholder="010-1234-5678" />
           </UserReservationFormLabel>
-        </CommonBaseInputContainer>
-        <CommonBaseInputContainer>
+        </FormInputContainer>
+        <FormInputContainer>
           <UserReservationFormLabel>
             생년월일
             <UserReservationFormInput placeholder="2022-10-31" />
           </UserReservationFormLabel>
-        </CommonBaseInputContainer>
+        </FormInputContainer>
         <ThemeButton>예약하기</ThemeButton>
       </UserReservationFormContainer>
     </UserReservationFormWrapper>
