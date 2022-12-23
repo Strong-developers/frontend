@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const { VITE_BASE_URL } = import.meta.env;
 
@@ -26,7 +26,9 @@ customAxios.interceptors.response.use(
   },
 
   (error) => {
-    throw new Error("error");
+    if (error instanceof AxiosError) {
+      throw error;
+    }
   }
 );
 
