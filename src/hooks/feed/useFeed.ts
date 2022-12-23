@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { feedListRequest } from "../../api/feedFetcher";
-import { FeedShelterUserType } from "../../types/feed/feedType";
+import { FeedType, FeedShelterUserType } from "../../types/feed/feedType";
 
 const useFeed = () => {
-  const [feeds, setFeeds] = useState([]);
+  const [feeds, setFeeds] = useState<Array<FeedType>>([]);
   const [curPage, setCurPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   const [shelterUser, setShelterUser] = useState<FeedShelterUserType>({
