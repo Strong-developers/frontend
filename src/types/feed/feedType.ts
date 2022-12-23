@@ -5,3 +5,9 @@ export interface FeedType {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface FeedShelterUserType {
+  name: string;
+  region: string;
+  profileUrl: string;
+}
