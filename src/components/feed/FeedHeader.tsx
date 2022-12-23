@@ -4,10 +4,16 @@ import FeedHeaderLeft from "./FeedHeaderLeft";
 import FeedHeaderRight from "./FeedHeaderRight";
 import Theme from "../../util/theme";
 
-const FeedHeader = () => {
+interface FeedHeaderProps {
+  region: string;
+  name: string;
+  profileUrl: string;
+}
+
+const FeedHeader = ({ region, name, profileUrl }: FeedHeaderProps) => {
   return (
     <FeedHeaderContainer>
-      <FeedHeaderLeft />
+      <FeedHeaderLeft region={region} name={name} profileUrl={profileUrl} />
       <FeedHeaderRight />
     </FeedHeaderContainer>
   );
