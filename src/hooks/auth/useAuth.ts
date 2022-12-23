@@ -53,59 +53,60 @@ const useAuth = () => {
   });
 
   const handleRegisterSubmit = async (data: AuthForm) => {
-    if (selectedRole === 1) {
-      const { email, password, nickname } = data;
-      const res = await authRegisterRequest("/auth/register/normaluser", {
-        email,
-        password,
-        nickname,
-        role: selectedRole,
-      });
-      if (res.success) navigate("/login", { replace: true });
-      else {
-        console.log(res.message);
+    try {
+      if (selectedRole === 1) {
+        const { email, password, nickname } = data;
+        const res = await authRegisterRequest("/auth/register/normaluser", {
+          email,
+          password,
+          nickname,
+          role: selectedRole,
+        });
+        if (res.success) navigate("/login", { replace: true });
+      } else {
+        const {
+          email,
+          password,
+          nickname,
+          name,
+          region,
+          phoneNumber,
+          description,
+          caution,
+        } = data;
+        const res = await authRegisterRequest("/auth/register/shelter", {
+          email,
+          password,
+          nickname,
+          role: selectedRole,
+          name,
+          region,
+          phoneNumber,
+          description,
+          caution,
+        });
+        if (res.success) navigate("/login", { replace: true });
       }
-    } else {
-      const {
-        email,
-        password,
-        nickname,
-        name,
-        region,
-        phoneNumber,
-        description,
-        caution,
-      } = data;
-      const res = await authRegisterRequest("/auth/register/shelter", {
-        email,
-        password,
-        nickname,
-        role: selectedRole,
-        name,
-        region,
-        phoneNumber,
-        description,
-        caution,
-      });
-      if (res.success) navigate("/login", { replace: true });
-      else {
-        console.log(res.message);
-      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
   const handleLoginSubmit = async (data: AuthForm) => {
     try {
-      const { result } = await authLoginRequest("/auth/login", {
+      const res = await authLoginRequest("/auth/login", {
         email: data.email,
         password: data.password,
       });
-      if (result.token) {
-        setItem(result.token);
+      if (res.success) {
+        const {
+          result: { token },
+        } = res;
+        setItem(token);
         navigate("/", { replace: true });
       }
     } catch (error) {
-      throw new Error("This is login request Error");
+      console.log(error);
     }
   };
 
