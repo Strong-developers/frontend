@@ -5,6 +5,7 @@ import LoadingSpinner from "../components/spinner/LoadingSpinner";
 
 const MainComponentPage = React.lazy(() => import("../pages/Main"));
 const LoginComponentPage = React.lazy(() => import("../pages/Login"));
+const LogoutComponentPage = React.lazy(() => import("../pages/Logout"));
 const RegisterComponentPage = React.lazy(() => import("../pages/Register"));
 const CalendarComponentPage = React.lazy(
   () => import("../components/calendar/Calendar")
@@ -25,6 +26,7 @@ const CustomRouter = () => {
         <Routes>
           <Route path="/" element={<MainComponentPage />} />
           <Route path="/login" element={<LoginComponentPage />} />
+          <Route path="/logout" element={<LogoutComponentPage />} />
           <Route path="/join" element={<RegisterComponentPage />} />
           <Route path="/reservation" element={<CalendarComponentPage />} />
           <Route path="/shelter" element={<ReservationComponentPage />} />

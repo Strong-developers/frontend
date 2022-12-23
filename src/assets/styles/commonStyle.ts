@@ -120,3 +120,16 @@ export const ChatHeader = styled.div`
   border-bottom: 1px solid ${Theme.colors.littleGray};
   flex-shrink: 0;
 `;
+
+export const FormErrorMessage = styled.p`
+  color: red;
+  width: 100%;
+  font-size: ${Theme.fontSize.smaller};
+`;
+
+export const FormInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+`;

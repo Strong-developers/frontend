@@ -21,8 +21,8 @@ const ReviewCard = ({ description, nickname, profileUrl }: ReviewCardProps) => {
 };
 
 const ReviewCardContainer = styled.div`
-  width: 18rem;
-  padding: 1rem;
+  width: 20rem;
+  padding: ${Theme.spacing.default};
   border-radius: 8px;
   background-color: ${Theme.colors.white};
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -31,6 +31,7 @@ const ReviewCardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+  box-sizing: border-box;
 `;
 
 export default ReviewCard;

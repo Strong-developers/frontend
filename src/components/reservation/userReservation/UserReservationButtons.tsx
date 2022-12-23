@@ -1,51 +1,43 @@
-import React from "react";
 import styled from "styled-components";
 import { createBackButton, createForwardButton } from "../../icons/IconCreator";
 import Theme from "../../../util/theme";
+import { UserReservationButtonsProps } from "../../../types/reservation/userReservationType";
 
-interface ReservationModalButtonContainerPropsType {
-  start: number;
-  end: number;
-  currentPosition: number;
-  onNextButtonClickEvent: () => void;
-  onPrevButtonClickEvent: () => void;
-}
-
-const ReservationModalButtonContainer = ({
+const ReservationModalButtons = ({
   start,
   end,
   currentPosition,
   onNextButtonClickEvent,
   onPrevButtonClickEvent,
-}: ReservationModalButtonContainerPropsType) => {
+}: UserReservationButtonsProps) => {
   return (
-    <ReservationModalButtonContainerStyle>
-      <ModalButton
+    <UserReservationButtonContainer>
+      <ReservationButton
         onClick={onPrevButtonClickEvent}
         disabled={currentPosition === start && true}
       >
         {createBackButton(16)}
         이전
-      </ModalButton>
-      <ModalButton
+      </ReservationButton>
+      <ReservationButton
         onClick={onNextButtonClickEvent}
         disabled={currentPosition === end && true}
       >
         다음
         {createForwardButton(16)}
-      </ModalButton>
-    </ReservationModalButtonContainerStyle>
+      </ReservationButton>
+    </UserReservationButtonContainer>
   );
 };
 
-export default ReservationModalButtonContainer;
+export default ReservationModalButtons;
 
-const ReservationModalButtonContainerStyle = styled.div`
+const UserReservationButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const ModalButton = styled.button`
+const ReservationButton = styled.button`
   background-color: transparent;
   border: none;
   font-size: ${Theme.fontSize.default};

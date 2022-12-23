@@ -1,34 +1,42 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import useAuth from "../hooks/auth/useAuth";
 import CommonBasePageComponent from "../components/hoc/CommonBasePageComponent";
 import AuthRegister from "../components/auth/AuthRegister";
-import { AuthFormType } from "../types/auth/authType";
+import { AuthForm } from "../types/auth/authType";
 
 const Register = () => {
   const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<AuthFormType>({
+    registerSchema,
+    selectedRole,
+    setSelectedRole,
+    handleRegisterSubmit,
+  } = useAuth();
+  const methods = useForm<AuthForm>({
     mode: "onChange",
     defaultValues: {
       email: "",
       nickname: "",
       password: "",
       confirmPassword: "",
+      name: "",
+      region: "",
+      phoneNumber: "",
+      description: "",
+      caution: "",
     },
+    resolver: yupResolver(registerSchema),
   });
-  const { handleRegisterSubmit } = useAuth();
 
   return (
     <CommonBasePageComponent>
-      <AuthRegister
-        onRegisterSubmitEvent={handleSubmit(handleRegisterSubmit)}
-        register={register}
-        errors={errors}
-      />
+      <FormProvider {...methods}>
+        <AuthRegister
+          selectedRole={selectedRole}
+          setSelectedRole={setSelectedRole}
+          onRegisterSubmitEvent={methods.handleSubmit(handleRegisterSubmit)}
+        />
+      </FormProvider>
     </CommonBasePageComponent>
   );
 };

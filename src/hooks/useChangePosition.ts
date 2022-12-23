@@ -6,16 +6,21 @@ const useChangePosition = (componentsNumber: number) => {
   const end = componentsNumber;
   const handleNextButtonClick = useCallback(() => {
     setCurrentPosition((prev) => (prev === componentsNumber ? prev : prev + 1));
-  }, [setCurrentPosition, currentPosition]);
+  }, [setCurrentPosition]);
 
   const handlePrevButtonClick = useCallback(() => {
     setCurrentPosition((prev) => (prev === 1 ? prev : prev - 1));
-  }, [setCurrentPosition, currentPosition]);
+  }, [setCurrentPosition]);
+
+  const resetPosition = useCallback(() => {
+    setCurrentPosition(1);
+  }, [setCurrentPosition]);
 
   return {
     start,
     end,
     currentPosition,
+    resetPosition,
     setCurrentPosition,
     handleNextButtonClick,
     handlePrevButtonClick,

@@ -4,17 +4,11 @@ import FeedHeaderLeft from "./FeedHeaderLeft";
 import FeedHeaderRight from "./FeedHeaderRight";
 import Theme from "../../util/theme";
 
-const FeedHeader = ({
-  onReservationModalOpenEvent,
-}: {
-  onReservationModalOpenEvent: () => void;
-}) => {
+const FeedHeader = () => {
   return (
     <FeedHeaderContainer>
       <FeedHeaderLeft />
-      <FeedHeaderRight
-        onReservationModalOpenEvent={onReservationModalOpenEvent}
-      />
+      <FeedHeaderRight />
     </FeedHeaderContainer>
   );
 };

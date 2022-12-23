@@ -48,6 +48,7 @@ const Pagination = ({ totalPages, curPage, setCurPage }: PaginationProps) => {
 export default Pagination;
 
 const PaginationContainer = styled.div`
+  height: 3rem;
   font-size: ${Theme.fontSize.small};
   text-align: center;
 `;
@@ -55,14 +56,20 @@ const PaginationContainer = styled.div`
 const PageNumberButton = styled.button<{ pageNumber: number; curPage: number }>`
   height: 40px;
   width: 40px;
+  margin: 2px;
   background-color: transparent;
-  border-radius: 50%;
-  border: none;
-
+  border: 1px solid ${Theme.colors.littleGray};
+  border-radius: 5px;
   cursor: pointer;
   ${(props) =>
     props.pageNumber === props.curPage &&
     `background-color: ${Theme.colors.theme}; color: ${Theme.colors.white}`};
+  &:hover {
+    background-color: ${Theme.colors.softTheme};
+  }
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 const PageNavButton = styled.button`

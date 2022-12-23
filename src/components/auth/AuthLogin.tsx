@@ -1,26 +1,18 @@
 import styled from "styled-components";
 import AuthCommonHeader from "./common/AuthCommonHeader";
-import AuthLoginFormComponent from "./form/AuthLoginFormComponent";
-import { AuthFormPropsType } from "../../types/auth/authType";
+import AuthLoginForm from "./form/AuthLoginForm";
+import { AuthFormProps } from "../../types/auth/authType";
 
-const AuthLogin = ({
-  register,
-  errors,
-  onLoginSubmitEvent,
-}: AuthFormPropsType) => {
+const AuthLogin = ({ onLoginSubmitEvent }: AuthFormProps) => {
   return (
-    <AuthLoginFormContainer>
+    <AuthLoginContainer onSubmit={onLoginSubmitEvent}>
       <AuthCommonHeader />
-      <AuthLoginFormComponent
-        register={register}
-        errors={errors}
-        onLoginSubmitEvent={onLoginSubmitEvent}
-      />
-    </AuthLoginFormContainer>
+      <AuthLoginForm />
+    </AuthLoginContainer>
   );
 };
 
-const AuthLoginFormContainer = styled.div`
+const AuthLoginContainer = styled.form`
   width: 30rem;
   margin: 0 auto;
   margin-top: 1rem;
