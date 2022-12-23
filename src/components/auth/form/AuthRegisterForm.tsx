@@ -13,7 +13,6 @@ const AuthRegisterForm = () => {
     register,
     formState: { errors },
   } = useFormContext<AuthForm>();
-  console.log(errors.confirmPassword);
   return (
     <AuthRegisterFormContainer>
       <FormInputContainer>
