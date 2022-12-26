@@ -24,12 +24,12 @@ const UserReservationNoticeBodyContainer = styled.div`
 `;
 
 const ShelterDescription = styled(CommonTextBox)`
-  height: 250px;
+  height: 16rem;
   background-color: white;
 `;
 
 const ShelterNotice = styled(CommonTextBox)`
-  height: 280px;
+  height: 16rem;
   background-color: white;
 `;
 
@@ -37,7 +37,7 @@ const ShelterNoticeTitle = styled.div`
   height: 25px;
   margin-bottom: 8px;
   padding: 0;
-  border-bottom: 1px solid ${Theme.colors.silverGray};
+  border-bottom: 1px solid ${Theme.colors.moreTp};
   line-height: 25px;
   text-align: center;
 `;

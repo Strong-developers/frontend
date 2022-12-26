@@ -14,5 +14,11 @@ const UserReservationNotice = () => {
 export default UserReservationNotice;
 
 const UserReservationNoticeContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  height: 50rem;
+  padding: 3rem;
+  box-sizing: border-box;
 `;

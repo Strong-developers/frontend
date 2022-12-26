@@ -7,15 +7,19 @@ const UserReservationCalendar = () => {
     <UserReservationCalendarContainer>
       <CalendarTextContainer>
         <CalendarText>날짜를 선택해주세요</CalendarText>
-        {createCalendarIcon(40)}
+        {createCalendarIcon(40, "white")}
       </CalendarTextContainer>
-      <Calendar />
+      <CalendarContainer>
+        <Calendar />
+      </CalendarContainer>
       <CalendarTextContainer>
         <CalendarText>시간을 선택해주세요</CalendarText>
-        {createTimeIcon(30)}
+        {createTimeIcon(40, "white")}
       </CalendarTextContainer>
-      <div>오전</div>
-      <div>오후</div>
+      <CalendarContainer>
+        <div>오전</div>
+        <div>오후</div>
+      </CalendarContainer>
     </UserReservationCalendarContainer>
   );
 };
@@ -23,14 +27,27 @@ const UserReservationCalendar = () => {
 export default UserReservationCalendar;
 
 const UserReservationCalendarContainer = styled.section`
+  flex-shrink: 0;
   width: 100%;
+  height: 100%;
 `;
 
-const CalendarText = styled.div`
+const CalendarText = styled.h2`
+  margin: 0;
   font-size: ${Theme.fontSize.littleBig};
+  color: ${Theme.colors.white};
 `;
 
 const CalendarTextContainer = styled.div`
-  dispay: flex;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: ${Theme.spacing.small};
+`;
+
+const CalendarContainer = styled.div`
+  border-radius: 4px;
+  margin-bottom: ${Theme.spacing.default};
+  background-color: ${Theme.colors.white};
+  box-shadow: rgba(99, 99, 99) 0px 2px 8px 0px inset;
 `;

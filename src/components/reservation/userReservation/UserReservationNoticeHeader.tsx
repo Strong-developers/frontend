@@ -17,6 +17,8 @@ const UserReservationNoticeHeaderContainer = styled.div`
 const ShelterTitle = styled.h2`
   font-size: ${Theme.fontSize.moreBig};
   font-weight: ${Theme.fontWeight.bold};
+  margin: 0;
+  padding: 0;
 `;
 
 const ShelterLocation = styled.p`
