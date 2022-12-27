@@ -2,17 +2,21 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import Theme from "../../util/theme";
 import FeedCard from "./FeedCard";
+import { FeedType } from "../../types/feed/feedType";
 
-const FeedBody = () => {
+interface FeedBodyProps {
+  feeds: Array<FeedType>;
+}
+
+const FeedBody = ({ feeds }: FeedBodyProps) => {
   const obsRef = useRef<HTMLDivElement>(null);
+
   return (
     <FeedBodyContainer>
       <FeedCardContainer>
-        <FeedCard />
-        <FeedCard />
-        <FeedCard />
-        <FeedCard />
-        <FeedCard />
+        {feeds.map((feed) => (
+          <FeedCard key={feed.id} feed={feed} />
+        ))}
       </FeedCardContainer>
       <ObserverBottom ref={obsRef}>아래로</ObserverBottom>
     </FeedBodyContainer>
