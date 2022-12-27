@@ -1,19 +1,19 @@
-import React from "react";
 import styled from "styled-components";
-import { createHeartIcon, createChatBubble } from "../icons/IconCreator";
+import { createFillHeartIcon, createChatBubble } from "../icons/IconCreator";
 import { FeedType } from "../../types/feed/feedType";
 import Theme from "../../util/theme";
 
 interface FeedCardProps {
   feed: FeedType;
+  onFeedCardClickEvent: () => void;
 }
 
-const FeedCard = ({ feed }: FeedCardProps) => {
+const FeedCard = ({ feed, onFeedCardClickEvent }: FeedCardProps) => {
   return (
-    <FeedCardWrapper>
+    <FeedCardWrapper onClick={onFeedCardClickEvent}>
       <FeedImgContainer>
         <FeedImgTextContainer>
-          <FeedImgText>{createHeartIcon(20)} 250</FeedImgText>
+          <FeedImgText>{createFillHeartIcon(20)} 250</FeedImgText>
           <FeedImgText>{createChatBubble(20)} 32</FeedImgText>
         </FeedImgTextContainer>
         <FeedImg src="../../src/assets/images/main-bg-01.jpg" />
