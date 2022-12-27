@@ -65,6 +65,7 @@ const UserReservationContainer = styled.section`
 
 const UserReservationLeft = styled.section`
   width: 50rem;
+  border-radius: 0.5rem;
   box-shadow: rgba(99, 99, 99, 0.8) 2px 2px 8px 1px;
   background-color: ${Theme.colors.moreTp};
   z-index: 2;
@@ -74,6 +75,7 @@ const UserReservationRight = styled.section`
   width: 30rem;
   height: 40.625rem;
   padding: 3rem;
+  border-radius: 0 0.5rem 0.5rem 0;
   box-shadow: rgba(99, 99, 99) 3px 3px 5px;
   background-color: #006680;
   z-index: 1;
