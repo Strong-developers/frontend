@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { createHeartIcon, createChatBubble } from "../icons/IconCreator";
+import { FeedType } from "../../types/feed/feedType";
 import Theme from "../../util/theme";
 
-const FeedCard = () => {
+interface FeedCardProps {
+  feed: FeedType;
+}
+
+const FeedCard = ({ feed }: FeedCardProps) => {
   return (
     <FeedCardWrapper>
       <FeedImgContainer>

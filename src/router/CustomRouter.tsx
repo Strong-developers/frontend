@@ -31,7 +31,7 @@ const CustomRouter = () => {
           <Route path="/join" element={<RegisterComponentPage />} />
           <Route path="/reservation" element={<CalendarComponentPage />} />
           <Route path="/shelter" element={<ReservationComponentPage />} />
-          <Route path="/feed" element={<FeedComponentPage />} />
+          <Route path="/feed/:id" element={<FeedComponentPage />} />
           <Route path="/mypage" element={<MyInformationComponentPage />} />
           <Route path="/chat" element={<ChatComponentPage />} />
           <Route path="/review" element={<ReviewComponentPage />} />

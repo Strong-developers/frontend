@@ -3,13 +3,19 @@ import styled from "styled-components";
 import Theme from "../../util/theme";
 import { CommonTitle, CommonSubTitle } from "../../assets/styles/commonStyle";
 
-const FeedHeaderLeft = () => {
+interface FeedHeaderLeftProps {
+  region: string;
+  name: string;
+  profileUrl: string;
+}
+
+const FeedHeaderLeft = ({ region, name, profileUrl }: FeedHeaderLeftProps) => {
   return (
     <FeedHeaderLeftContainer>
-      <FeedHeaderImg src="../../src/assets/images/main-bg-01.jpg" />
+      <FeedHeaderImg src={profileUrl} />
       <FeedHeaderTitleContainer>
-        <FeedHeaderLocation>경기 의정부시</FeedHeaderLocation>
-        <FeedHeaderTitle>오늘의 보호소</FeedHeaderTitle>
+        <FeedHeaderLocation>{region}</FeedHeaderLocation>
+        <FeedHeaderTitle>{name}</FeedHeaderTitle>
       </FeedHeaderTitleContainer>
     </FeedHeaderLeftContainer>
   );
