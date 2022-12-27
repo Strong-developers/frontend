@@ -6,16 +6,21 @@ import { FeedType } from "../../types/feed/feedType";
 
 interface FeedBodyProps {
   feeds: Array<FeedType>;
+  onFeedCardClickEvent: () => void;
 }
 
-const FeedBody = ({ feeds }: FeedBodyProps) => {
+const FeedBody = ({ feeds, onFeedCardClickEvent }: FeedBodyProps) => {
   const obsRef = useRef<HTMLDivElement>(null);
 
   return (
     <FeedBodyContainer>
       <FeedCardContainer>
         {feeds.map((feed) => (
-          <FeedCard key={feed.id} feed={feed} />
+          <FeedCard
+            key={feed.id}
+            feed={feed}
+            onFeedCardClickEvent={onFeedCardClickEvent}
+          />
         ))}
       </FeedCardContainer>
       <ObserverBottom ref={obsRef}>아래로</ObserverBottom>
