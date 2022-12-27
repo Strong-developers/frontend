@@ -1,4 +1,9 @@
-import { BsArrowRight, BsArrowLeft, BsSuitHeartFill } from "react-icons/bs";
+import {
+  BsArrowRight,
+  BsArrowLeft,
+  BsSuitHeartFill,
+  BsSuitHeart,
+} from "react-icons/bs";
 import {
   MdArrowBackIosNew,
   MdArrowForwardIos,
@@ -34,8 +39,12 @@ export function createTimeIcon(size: number, color?: string) {
   return <IoMdTime size={size} color={color} style={commonStyle} />;
 }
 
-export function createHeartIcon(size: number, color?: string) {
+export function createFillHeartIcon(size: number, color?: string) {
   return <BsSuitHeartFill size={size} color={color} style={commonStyle} />;
+}
+
+export function createHeartIcon(size: number, color?: string) {
+  return <BsSuitHeart size={size} color={color} style={commonStyle} />;
 }
 
 export function createChatBubble(size: number, color?: string) {
