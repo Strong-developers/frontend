@@ -36,14 +36,14 @@ const CustomModalBackDrop = styled.div<{ isModalOpen: boolean }>`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 0;
+  z-index: 999;
 `;
 
 const CustomModalWrapper = styled.div`
   width: auto;
   height: auto;
   position: fixed;
-  padding: 1rem 1.75rem 1rem 1.75rem;
+  padding: 1rem 1.75rem 2.5rem 1.75rem;
   top: 50%;
   left: 50%;
   text-align: center;

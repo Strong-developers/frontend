@@ -95,7 +95,7 @@ export const CommonTextBox = styled.div`
   margin: 25px 0;
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid ${Theme.colors.silverGray};
+  box-shadow: rgba(99, 99, 99) 0px 2px 8px 0px inset;
   white-space: pre-wrap;
   overflow: auto;
   text-align: left;

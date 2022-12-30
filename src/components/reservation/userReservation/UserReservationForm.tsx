@@ -52,19 +52,20 @@ const UserReservationForm = () => {
 
 export default UserReservationForm;
 
-const UserReservationFormWrapper = styled.section``;
+const UserReservationFormWrapper = styled.section`
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+`;
 
-const UserReservationFormContainer = styled.div`
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+const UserReservationFormContainer = styled.form`
+  margin-top: 4rem;
 `;
 
 const UserReservationFormTitle = styled.h2`
   font-size: ${Theme.fontSize.littleBig};
+  margin: 0;
+  color: ${Theme.colors.white};
 `;
 
 const UserReservationFormInput = styled(CommonInput)`
@@ -75,4 +76,5 @@ const UserReservationFormInput = styled(CommonInput)`
 const UserReservationFormLabel = styled(CommonLabel)`
   font-size: 15px;
   text-align: left;
+  color: ${Theme.colors.white};
 `;

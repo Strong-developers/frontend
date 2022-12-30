@@ -35,6 +35,7 @@ export default ReservationModalButtons;
 const UserReservationButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 2rem;
 `;
 
 const ReservationButton = styled.button`
